@@ -1,0 +1,142 @@
+@font-face {
+    font-family: Azonix;
+    src: url(Azonix.otf)
+}
+html {
+    min-height: 100vh;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url(background.png);
+    background-size:cover;
+    background-position: center;
+}
+header {
+    padding: 0;
+    margin: 0;
+    border-style:ridge;
+    border-color: white;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: black;
+}
+
+.navbar {
+    min-height: 60px;
+    max-height: 5%;
+    width: 80%;
+    display: flex;
+    flex-flow: row;
+    margin-left: 10%;
+}
+
+.navButton {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.navButton:hover{
+    background-color: white;
+}
+
+.navButton:hover a{
+    color: black;
+}
+
+.navButton a {
+    color: white;
+    font-family: Azonix;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sidebar {
+    min-height: 100%;
+    width: 25%;
+}
+
+.mainbar {
+    min-height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    background-color: white;
+    border-radius: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container h1 {
+   margin: 0;
+   margin-top: 10px;
+   font-size: 40px;
+   font-family: Azonix;
+}
+
+.container h2 {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container a {
+    color: black;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    min-height: 100%;
+    width: 100%;
+}
+
+.marginDiv {
+    display: flex;
+    min-height: 50px;
+    max-height: 100px;
+    width: 100%;
+}
+
+footer {
+    border-style:ridge;
+    border-color: white;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    background-color: black;
+    bottom: 0;
+}
+
+.footerContent {
+    min-height: 60px;
+    max-height: 5%;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footerContent p1 {
+    color: white;
+    margin-left: 10px;
+}
+
