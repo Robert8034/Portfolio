@@ -42,6 +42,31 @@
     color: white;
 }
 
+.aboutPage {
+    height: 100vh;
+}
+
+.navbarCustom {
+    border: solid;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-color: rgb(241, 54, 55);
+    background-color: rgb(24, 24, 32);
+}
+
+.navItem {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbarButton {
+    margin-left: 10px;
+}
+.projectsPage {
+    height: 100vh;
+}
+
 @font-face {
     font-family: Azonix;
     src: url(../Azonix.otf);
@@ -79,11 +104,11 @@
     }
 }
 
-html {
+/* html {
     min-height: 100vh;
-}
+} */
 
-body{
+/* body{
     padding: 0;
     margin: 0;
     background-image: url(../background.png);
@@ -258,7 +283,7 @@ footer {
 
 #loader-wrapper .loader-section.section-right {
    right: 0; 
-}
+} */
 
 .loaded #loader-wrapper .loader-section.section-left {
     -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
