@@ -13,7 +13,7 @@
             <div class="landingsPageText">
                 <h1>Hi, I'm <span style="color: rgb(241, 54, 55)">Robert Dams</span></h1>
                 <h1>I'm a <span style="color: rgb(241, 54, 55)">full-stack software engineer</span></h1>
-                <button type="button" class="btn btn-default landingsPageButton">Check out my work</button>
+                <a type="button" class="btn btn-default landingsPageButton" href="#about">Check out my work</a>
             </div>
         </div>
         <nav class="navbar sticky-top navbar-expand-lg navbar-dark navbarCustom">
@@ -26,64 +26,78 @@
                   <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item navItem">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item navItem">
-                    <a class="nav-link" href="#">Skills</a>
+                    <a class="nav-link" href="#skills">Skills</a>
                   </li>
                 <li class="nav-item navItem">
-                  <a class="nav-link" href="#">Projects</a>
+                  <a class="nav-link" href="#projects">Projects</a>
                 </li>
                 <li class="nav-item navItem">
-                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="#contact">Contact</a>
                 </li>
               </ul>
             </div>
           </nav>
-        <div class="aboutPage">
+        <div class="aboutPage" id="about">
             <h1 style="text-align: center; padding-top: 20px; color: rgb(241, 54, 55);">About</h1>
             <hr style="width: 30%; height: 5px; background-color:rgb(241, 54, 55); margin-left: 35%;"></hr>  
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 column-left d-flex flex-wrap align-items-center">
+                        <img src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" class="img-fluid" alt="picture">
+                    </div>
+                    <div class="col-md-6 column-right">
+                        <h2>Who am I?</h2>
+                        <p1>My name is Robert Dams, and I am currently a Software Engineering student at Fontys Hogescholen. I am a curious, communicative and motivated person in the software development field.</p1><br><br>
+                        <p1>As a person I am open-minded and I like to learn. This results in me exploring lots of different aspects of Software Engineering instead of sticking to one subject. I try out new programming languages and techniques in my free time to expand my view on Software Engineering.</p1><br><br>
+                        <p1>I am a people's person and greatly enjoy working with or for others. As a bit of a social butterfly you will find me mostly taking on leadership roles in a group and handling communication to stakeholders.</p1>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="skillsPage">
+        <div class="skillsPage" id="skills">
             <h1 style="text-align: center; padding-top: 20px; color: rgb(241, 54, 55);">Skills</h1>
             <hr style="width: 30%; height: 5px; background-color:rgb(241, 54, 55); margin-left: 35%;"></hr>  
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 column">
-                        <img src="https://static.thenounproject.com/png/568069-200.png" class="img-fluid" alt="picture">
+                        <img src="https://static.thenounproject.com/png/568069-200.png" class="img-fluid" alt="Software Development">
                         <h2>Software Development</h2>
                         <p1>Software Development is my bread and butter. I am proficient in both high level programming languages like C# and Java, as well as lower level ones like C++. All code adhers to the latest SOLID principles.</p1>
                     </div>
                     <div class="col-md-4 column">
-                        <img src="https://static.thenounproject.com/png/2963864-200.png" class="img-fluid" alt="picture">
+                        <img src="https://static.thenounproject.com/png/2963864-200.png" class="img-fluid" alt="Development Operations">
                         <h2>Development Operations</h2>
                         <p1>DevOps is second nature to me. I have experience in both Azure and Google Cloud as well as code analysis tools like Jenkins and SonarQube.</p1>
                     </div>
                     <div class="col-md-4 column">
-                        <img src="https://static.thenounproject.com/png/3190682-200.png" class="img-fluid" alt="picture">
+                        <img src="https://static.thenounproject.com/png/3190682-200.png" class="img-fluid" alt="Webdesign">
                         <h2>Webdesign</h2>
                         <p1>A good back-end deserves a beautiful front-end. I have experience in React and Blazor. I also know how to make effective use of Bootstrap in both React and native HTML/CSS.</p1>
                     </div>
                     <div class="col-md-4 column">
-                        <img src="https://static.thenounproject.com/png/1382336-200.png" class="img-fluid" alt="picture">
+                        <img src="https://static.thenounproject.com/png/1382336-200.png" class="img-fluid" alt="Cyber Security">
                         <h2>Cyber Security</h2>
                         <p1>I design and code all my software with security in mind. Applications made by me will be defended from all manner of cyber threats like SQL Injection or Cross-Site Scripting.</p1>
                     </div>
                     <div class="col-md-4 column">
-                        <img src="https://static.thenounproject.com/png/1854505-200.png" class="img-fluid" alt="picture">
+                        <img src="https://static.thenounproject.com/png/1854505-200.png" class="img-fluid" alt="Project Management">
                         <h2>Project management</h2>
                         <p1>I have taken the project leader roll countless times and ensure all projects meet deadlines. Working with me means effective and timely communication as well as a solution-based mindset.</p1>
                     </div>
                     <div class="col-md-4 column">
-                        <img src="https://static.thenounproject.com/png/2199735-200.png" class="img-fluid" alt="picture">
+                        <img src="https://static.thenounproject.com/png/2199735-200.png" class="img-fluid" alt="Software Quality Assurance">
                         <h2>SQA</h2>
                         <p1>All code released has undergone multiple levels of testing through either DevOps pipelines or manual testing during development. I am also highly experienced in Test Driven Development.</p1>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="projectsPage">
-
+        <div class="projectsPage" id="projects">
+            <h1 style="text-align: center; padding-top: 20px; color: rgb(241, 54, 55);">Projects</h1>
+            <hr style="width: 30%; height: 5px; background-color:rgb(241, 54, 55); margin-left: 35%;"></hr>  
         </div>
       
     </body>

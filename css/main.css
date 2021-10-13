@@ -42,10 +42,6 @@
     color: white;
 }
 
-.aboutPage {
-    height: 100vh;
-}
-
 .navbarCustom {
     border: solid;
     border-left: 0px;
@@ -76,6 +72,37 @@
     padding-top: 10px;
     padding-bottom: 5px;
     color: rgb(241, 54, 55);
+}
+
+.column-left {
+    padding: 30px;
+    text-align: right;
+}
+
+.column-right {
+    padding: 30px;
+    text-align: left;
+}
+
+.column-right h2 {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: rgb(241, 54, 55);
+}
+
+#about {
+    padding-top: 50px;
+    margin-top: -50px;
+}
+
+#skills {
+    padding-top: 50px;
+    margin-top: -50px;
+}
+
+#projects {
+    padding-top: 50px;
+    margin-top: -50px;
 }
 
 @font-face {
@@ -335,4 +362,14 @@ footer {
 }
 .no-js h1 {
     color: #222222;
+}
+
+@media (max-width: 768px) {
+    .column-right {
+        text-align: center;
+    }
+
+    .column-left {
+        padding-top: 30px;
+    }
 }
