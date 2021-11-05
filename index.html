@@ -3,11 +3,12 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/main.css">
-      
+        <link rel="stylesheet" href="css/main.css">  
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/> <!--Font Awesome-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/> <!--Google Fonts-->
     </head>
-    <body>
-        <div class="landingsPage" id="#">
+    <body data-bs-spy="scroll" data-bs-target=".navbar">
+        <div class="landingsPage" id="home">
             <div class="landingsPageText">
                 <h1>Hi, I'm <span style="color: rgb(241, 54, 55)">Robert Dams</span></h1>
                 <h1>I'm a <span style="color: rgb(241, 54, 55)">full-stack software engineer</span></h1>
@@ -21,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbar">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item navItem">
-                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="#home">Home</a>
                 </li>
                 <li class="nav-item navItem">
                   <a class="nav-link" href="#about">About</a>
@@ -96,80 +97,83 @@
         <div class="projectsPage" id="projects">
             <h1 style="text-align: center; padding-top: 20px; color: rgb(241, 54, 55);">Projects</h1>
             <hr style="width: 30%; height: 5px; background-color:rgb(241, 54, 55); margin-left: 35%;"></hr>  
-            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 projectColumn"> 
+                        <div class="projectText">
+                            <p1>All code released has undergone multiple levels of testing through either DevOps pipelines or manual testing during development. I am also highly experienced in Test Driven Development.</p1>
+                        </div>
+                    </div>
+                    <div class="col-md-4 projectColumn" style="background-image: url(https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg);"> 
+                        <div class="projectText">
+                            <p1>All code released has undergone multiple levels of testing through either DevOps pipelines or manual testing during development. I am also highly experienced in Test Driven Development.</p1>
+                        </div>                    
+                    </div>
+                    <div class="col-md-4 projectColumn"> 
+                        <div class="projectText">
+                            <p1>All code released has undergone multiple levels of testing through either DevOps pipelines or manual testing during development. I am also highly experienced in Test Driven Development.</p1>
+                        </div>                    
+                    </div>
+                    <div class="col-md-4 projectColumn"> 
+                        <div class="projectText">
+                            <p1>All code released has undergone multiple levels of testing through either DevOps pipelines or manual testing during development. I am also highly experienced in Test Driven Development.</p1>
+                        </div>                    
+                    </div>
+                    <div class="col-md-4 projectColumn" style="background-image: url(https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg);"> 
+                        <div class="projectText">
+                            <p1>All code released has undergone multiple levels of testing through either DevOps pipelines or manual testing during development. I am also highly experienced in Test Driven Development.</p1>
+                        </div>                    
+                    </div>
+                    <div class="col-md-4 projectColumn"> 
+                        <div class="projectText">
+                            <p1>All code released has undergone multiple levels of testing through either DevOps pipelines or manual testing during development. I am also highly experienced in Test Driven Development.</p1>
+                        </div>                    
+                    </div>
+                    <div class="col-md-4 projectColumn"> 
+                        <div class="projectText">
+                            <p1>All code released has undergone multiple levels of testing through either DevOps pipelines or manual testing during development. I am also highly experienced in Test Driven Development.</p1>
+                        </div>                    
+                    </div>
+                    <div class="col-md-4 projectColumn" style="background-image: url(https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg);"> 
+                        <div class="projectText">
+                            <p1>All code released has undergone multiple levels of testing through either DevOps pipelines or manual testing during development. I am also highly experienced in Test Driven Development.</p1>
+                        </div>                    
+                    </div>
+                    <div class="col-md-4 projectColumn" style="background-image: url(https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg);"> 
+                        <div class="projectText">
+                            <p1>All code released has undergone multiple levels of testing through either DevOps pipelines or manual testing during development. I am also highly experienced in Test Driven Development.</p1>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
         </div>
-      
+       <!-- Footer -->
+        <footer class="footer bg-dark text-center text-white" id="contact">
+            <!-- Grid container -->
+            <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/robert-dams/" role="button"
+                ><i class="fab fa-linkedin-in"></i>
+                </a>
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Robert8034" role="button"
+                ><i class="fab fa-github"></i>
+                </a>
+            </section>
+            <section class="mb-4">
+                <p>If you have any questions or suggestions, feel free to contact me at one of my socials!</p>
+            </section>
+            </div>
+        
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright:
+            <a class="text-white" href="https://www.linkedin.com/in/robert-dams/">Robert Dams</a>
+            </div>
+        </footer>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="css/index.css">
-<header>
-    <div class=navbar>
-        <div class=navButton>
-            <a href="index.html">Robert Dams</a>
-        </div>
-        <div class=navButton>
-            <a href="projects.html">Projects</a>
-        </div>
-        <div class=navButton>
-            <a href="workingexperience.html">Working Experience</a>
-        </div>
-        <div class=navButton>
-            <a href="cv.html">Curricilum Vitae</a>
-        </div>
-        <div class=navButton>
-            <a href="contact.html">Contact</a>
-        </div>
-    </div>
-</header>
-<body id="body">
-    <div id="loader-wrapper">
-        <p>Loading... please wait</p>
-        <div id="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
-    <div class="content">
-        <div class="sidebar">
-        </div>
-        <div class="mainbar">
-            <div class="marginDiv">
-            </div>
-            <div class="container">
-                <h1>Welcome</h1>
-                <h2>Welcome to my portfolio website. This website exists to give you a broader overview of my work experience and relevant education. I hope you can find everything here. If not, you can always contact me using the <a href=contact.html>Contact</a> page!</h2>
-            </div>
-            <div class="marginDiv">
-            </div>
-            <div class="container">
-                <h1>Who am I?</h1>
-                <h2>My name is Robert Dams, and I am currently a Software Engineering student at Fontys Hogescholen. I am a curious, communicative and motivated person in the software development field.</h2>
-            </div>
-            <div class="marginDiv">
-            </div>
-            <div class="container">
-                <h1>Programming skills</h1>
-                <h2>As a person I am open-minded and I like to learn. This results in me exploring lots of different aspects of Software Engineering instead of sticking to one subject. My go to programming language currently is C#, however I am also proficient in Java, HTML, CSS, .Net, SQL and a handfull of frameworks. To see a more in depth list of skills I would suggest checking out the <a href=workingexperience.html>Working Experience</a> page</h2>
-            </div>
-            <div class="marginDiv">
-            </div>
-            <div class="container">
-                <h1>Relevant Experience</h1>
-                <h2>Not only am I experienced in development, I also enjoy public speaking and general human interaction. Working in retail sales and computer repairs for a number of years made me customer focused and a great listener. Next to that I also enjoy public speaking. Stuff like presenting new projects or updating the stakeholders of a current project is something that I enjoy doing. This is why in most projects, you will likely see me take on a leadership role.</h2>
-            </div>
-            <div class="marginDiv">
-            </div>
-        </div>
-        <div class="sidebar">
-        </div>
-    </div>
-
-    <script src="js/main.js"></script>
-    
-</body>
-<footer>
-    <div class="footerContent">
-        <p1>Designed and programmed by Robert Dams</p1>
-    </div>
-</footer> -->
 </html>
