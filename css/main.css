@@ -93,6 +93,7 @@
     padding: 0;
     display: flex;
     align-items: center;
+    background-position: center;
 }
 
 .projectColumn:after {
@@ -107,10 +108,11 @@
     margin-left: 5%;
     text-align: center;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     background-color: rgba(24, 24, 32, 0.7);
-    transition: width 1s, height 1s, margin 1s;
+    transition: width 1s, height 1s, margin 1s, background-color 1s;
     text-decoration: none;
+    overflow: hidden;
 }
 
 .projectText:hover {
@@ -132,6 +134,12 @@
     font-size: larger;  
     width:initial;
     transition: margin 1s;
+}
+
+.projectText h1 {
+    color: white;
+    font-family: Monsterrat;
+    text-decoration: underline;
 }
 
 #about {
