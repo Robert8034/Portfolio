@@ -113,6 +113,7 @@
     transition: width 1s, height 1s, margin 1s, background-color 1s;
     text-decoration: none;
     overflow: hidden;
+    padding: 5px;
 }
 
 .projectText:hover {
