@@ -29,9 +29,9 @@
   <body>
     <div class="titlecard">
       <div class="titlecard-content">
-        <h1 class="titlecard-title">Reporting Automation Tool (RAT)</h1>
-        <h2 class="titlecard-subtitle">Internship at ASML</h2>
-        <p1 class="titlecard-date">08/2020 - 02/2021</p1>
+        <h1 class="titlecard-title">Sound2Show</h1>
+        <h2 class="titlecard-subtitle">Graduation at ALTEN</h2>
+        <p1 class="titlecard-date">02/2022 - 07/2022</p1>
       </div>
     </div>
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark navbarCustom">
@@ -72,13 +72,13 @@
       <div class="container">
           <div class="row">
               <div class="col-md-6 column-left d-flex flex-wrap align-items-center">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/ASML_headquarters_Veldhoven.jpg" class="img-fluid" alt="picture">
+                  <img src="https://altenusa.com/wp-content/uploads/2022/03/ALTEN-Technology-Group.jpg" class="img-fluid" alt="picture">
               </div>
               <div class="col-md-6 column-right">
                   <h2>Company</h2>
-                  <p1>ASML gives the world's leading chipmakers the power to mass produce patterns on silicon. Originating from Veldhoven, The Netherlands, ASML is a big employer in the Brainport area. ASML's best known product is the TWINSCAN, a lithography machine used in most of the world's chip production.</p1>
+                  <p1>ALTEN is a global consultancy company originating from France. Within 30 years, ALTEN has become leader in both outsourced Engineering and R&D and IT Services with more than 37,000 engineers in nearly 30 countries. ALTEN is active in a wide variaty of sectors, including but not limited to Aeronautics, Space, Defense, Energy and Banking.</p1>
                   <h2>Product</h2>
-                  <p1>Chips produced with TWINSCAN are made in so called wafers. These wafers are printed in layers, with some taking up hours to produce. Mistakes in the production process are costly and unnoticable with the human eye. This is where YieldStar comes in. YieldStar is a machine that is able to measure the wafers on a list of KPI's and determines of the wafer is of sufficient quality. This prevents mistakes in the production process to be noticed too late and allows adjustment early on.</p1>
+                  <p1>ALTEN's most important product is its people. Technical competence is the reason customers have been satisfied with ALTEN engineers for over 30 years. To demonstrate the excellent learning environment of ALTEN the Sound2Show project was created. The project is meant to be used at expositions or demonstrations for potentional future customers.</p1>
               </div>
           </div>
       </div>
@@ -90,23 +90,23 @@
           <div class="row">
               <div class="col-md-6 column-right">
                   <h2>Situation</h2>
-                  <p1>Customers of ASML require new KPI's to be added consistently with advancements in the TWINSCAN machine. The codebase of YieldStar is vast and contains a lot of legacy code. This causes a lot of work when new KPI's have to be added, since a huge amount of small changes have to be made throughout the codebase. With a standard addition of a KPI, it will take one (1) developer an entire sprint (2 weeks) to add a single KPI.</p1>
+                  <p1>ALTEN has 2 choices for students willing to graduate: pick an off the shelf project and improve upon it, or define a new project. The Sound2show project is a mix of both. It utilises the already made LEDCubes project as a way to output light, and will create the audio analysis part from scratch.</p1>
                   <h2>Task</h2>
-                  <p1>To speed up development time the Reporting Automation Tool (RAT) was envisioned. The RAT generates code within the YieldStar project to assist in the addition of new KPI's and reduce errors during the addition of new KPI's</p1>
+                  <p1>The primary task of the Sound2Show project is to create an implementation which can analyse audio in real-time. To achieve this feat, a project written in C and C++ is created with performance in mind. The secondary task of the Sound2Show project is to format the analysis data and deliver it to the LEDCubes project to enable a lightshow to be created.</p1>
               </div>
               <div class="col-md-6 column-right d-flex flex-wrap align-items-center">
-                <img src="https://images0.persgroep.net/rcs/fDgT8ik_iZbBe1-spRlby11NczY/diocontent/160046781/_fill/1600/900/?appId=21791a8992982cd8da851550a453bd7f&quality=0.9" class="img-fluid" alt="picture">
+                <img src="https://www.bassheadspeakers.com/wp-content/uploads/2018/10/SOAIY-S52-LED-Bluetooth-Speaker-with-Lights.jpg" class="img-fluid" alt="picture">
             </div>
           </div>
           <div class="row">
           <div class="col-md-6 column-right d-flex flex-wrap align-items-center">
-            <img src="https://pbs.twimg.com/media/EzeQ_CqXIAESUu8.jpg" class="img-fluid" alt="picture">
+            <img src="../LEDCubes.png" class="img-fluid" alt="picture">
           </div>
           <div class="col-md-6 column-right">
             <h2>Action</h2>
-            <p1>The RAT was extended by adding support for all major reporting formats used within YieldStar (CSV, ADEL, XML). The YieldStar codebase was also refactored at points where new KPI's had to be added to allow for easier code generation. This also involved the standardisation of most KPI's to allow easier future generation. Lastly the RAT was prepared for and eventually released to the production environment of YieldStar.</p1>
+            <p1>To source the audio data for the analysis an audio sampler had to be created. It is important that the audio quality is as high as possible, since higher quality audio will result in a higher quality analysis. To achieve the highest audio quality possible, an implementation was written that samples audio data directly from the soundcard of the laptop on which the laptop runs. To analyse this audio data, a Fast Fourier Transformation (FFT) algorithm was created. This algorithm accuratly divides audio data in its frequencies, which is then used to create a lightshow. Lastly a bridge implementation was created in order to format the analysis data in a way that was optimal for the LEDCubes project. The data was then send over WiFi to the LEDCubes project.</p1>
             <h2>Result</h2>
-            <p1>Developers at the Reporting team within the YieldStar project now actively use the RAT to speed up the addition of new KPI's to the YieldStar codebase. The use of the RAT has reduced the amount of time it needs to add a new KPI significantly and has also reduced the margin of error when adding new KPI's.</p1>
+            <p1>The resulting Sound2Show project is fit to analyse any genre of music. This is quite a feat, since most audio analysis software struggles with fringe types of music like classical or jazz. This was achieved by building a dynamic FFT algorithm from scratch. New insight was also gained into the LEDCubes project, which was documented for potentional future projects. The project was eventually graded with a 10/10, resulting in a Cum Laude graduation.</p1>
         </div>
         </div>
       </div>
@@ -118,12 +118,12 @@
           <div class="row">
               <div class="col-md-6 column-right">
                   <h2>Programming Languages</h2>
-                  <p1>The reporting component of YieldStar is written in C#. This was the obvious choice for the RAT as well, since both projects are heavily intertwined. In addition to the use of C#, WPF was used to deliver a comprehensive interface for developers to use. Furthermore, XML was used to store configuration data for the RAT.</p1>
+                  <p1>The Sound2Show project was largely coded in C++. This language was choosen for its high performance which is crucial in audio analysis. The audio sourcing was programmed in C since it deals with the soundcard directly. The LEDCubes project was already written in Lua, which was then documented.</p1>
                   <h2>Development Methods</h2>
-                  <p1>During the project the RAT was embedded into a running reporting scrum team at ASML. Naturally the RAT project adhered to the in-place agile working environment. Thus the RAT project was developed using Agile Scrum. To adhere to the high standards of delivery for ASML products the RAT project was also tested extensivly. This was documented using TPS (Test Performance Specification) and TAR (Test Analysis Report) documents.</p1>
+                  <p1>The project was developed using Agile Scrum. Peer reviews were also used to ensure high code quality, since the graduate had not programmed in either C or C++ before.</p1>
               </div>
               <div class="col-md-6 column-right d-flex flex-wrap align-items-center">
-                <img src="https://i.stack.imgur.com/LnOBK.png" class="img-fluid" alt="picture">
+                <img src="https://images.idgesg.net/images/article/2019/03/c-plus-plus_code-100790020-large.jpg?auto=webp&quality=85,70" class="img-fluid" alt="picture">
             </div>
           </div>
       </div>
