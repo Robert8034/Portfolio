@@ -60,6 +60,13 @@
   margin-left: 10px;
 }
 
+.profilePicture img {
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: rgb(241, 54, 55, 0.7);
+}
+
 .column {
   padding: 30px;
   text-align: center;
