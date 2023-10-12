@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" title="Sound2Show project at ALTEN">
-  <title>Sound2Show project at ALTEN</title>
+<html lang="en" title="Reporting Automation Tool (RAT) at ASML">
+  <title>KControl at Koma</title>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -30,9 +30,9 @@
   <body>
     <div class="titlecard">
       <div class="titlecard-content">
-        <h1 class="titlecard-title">Sound2Show</h1>
-        <h2 class="titlecard-subtitle">Graduation at ALTEN</h2>
-        <p1 class="titlecard-date">02/2022 - 07/2022</p1>
+        <h1 class="titlecard-title">KControl</h1>
+        <h2 class="titlecard-subtitle">Consultancy assignment at Koma</h2>
+        <p1 class="titlecard-date">09/2022 - 05/2023</p1>
       </div>
     </div>
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark navbarCustom">
@@ -73,13 +73,13 @@
       <div class="container">
           <div class="row">
               <div class="col-md-6 column-left d-flex flex-wrap align-items-center">
-                  <img src="https://altenusa.com/wp-content/uploads/2022/03/ALTEN-Technology-Group.jpg" class="img-fluid" alt="picture">
+                  <img src="../images/koma-image1.jpg" class="img-fluid" alt="picture">
               </div>
               <div class="col-md-6 column-right">
                   <h2>Company</h2>
-                  <p1>ALTEN is a global consultancy company originating from France. Within 30 years, ALTEN has become leader in both outsourced Engineering and R&D and IT Services with more than 37,000 engineers in nearly 30 countries. ALTEN is active in a wide variaty of sectors, including but not limited to Aeronautics, Space, Defense, Energy and Banking.</p1>
+                  <p1>Koma is a Dutch company renowned for its specialization in industrial and commercial refrigeration solutions. With a history dating back to 1938, Koma has established itself as a leader in the field. They are recognized for their innovative and sustainable approach to cooling systems, focusing on energy-efficient solutions.</p1>
                   <h2>Product</h2>
-                  <p1>ALTEN's most important product is its people. Technical competence is the reason customers have been satisfied with ALTEN engineers for over 30 years. To demonstrate the excellent learning environment of ALTEN the Sound2Show project was created. The project is meant to be used at expositions or demonstrations for potentional future customers.</p1>
+                  <p1>Koma boasts an extensive array of advanced products within the industrial and commercial refrigeration sector. Their comprehensive product line encompasses a variety of offerings, such as state-of-the-art refrigeration units, precision-engineered cold storage solutions, and environmentally controlled environments. All Koma products are crafted with a strong emphasis on quality and energy efficiency, aligning with their commitment to delivering top-tier solutions to their clientele.</p1>
               </div>
           </div>
       </div>
@@ -91,23 +91,29 @@
           <div class="row">
               <div class="col-md-6 column-right">
                   <h2>Situation</h2>
-                  <p1>ALTEN has 2 choices for students willing to graduate: pick an off the shelf project and improve upon it, or define a new project. The Sound2show project is a mix of both. It utilises the already made LEDCubes project as a way to output light, and will create the audio analysis part from scratch.</p1>
+                  <p1>Koma is at the forefront of the refrigeration industry, offering a diverse range of advanced refrigeration solutions. What sets their products apart is the seamless integration of cutting-edge hardware and sophisticated software. Despite their significant presence in the industry, Koma maintains a relatively compact software team. This small, dedicated group is responsible for the development and upkeep of the intricate software that powers Koma's applications, showcasing their commitment to innovation and efficiency.</p1>
                   <h2>Task</h2>
-                  <p1>The primary task of the Sound2Show project is to create an implementation which can analyse audio in real-time. To achieve this feat, a project written in C and C++ is created with performance in mind. The secondary task of the Sound2Show project is to format the analysis data and deliver it to the LEDCubes project to enable a lightshow to be created.</p1>
+                  <p1>In recent times, a significant portion of Koma's software development department has transitioned into retirement, creating a noticeable void in knowledge and maintenance capabilities for Koma's vital software systems. Even as Koma strides forward with the development of the next generation of refrigeration systems, there is a pressing need to ensure the continued operation and support of their existing systems for an extended duration.<br><br>
+
+                    Faced with the challenge of sustaining these legacy software systems, Koma recognized the necessity to engage external expertise. As a result, I was brought on board to address this critical need. My role primarily involves meticulously documenting the intricacies of the existing software for future reference and seamless handover. Additionally, I am tasked with identifying and rectifying any pre-existing issues in the legacy software.</p1>
               </div>
               <div class="col-md-6 column-right d-flex flex-wrap align-items-center">
-                <img src="https://www.bassheadspeakers.com/wp-content/uploads/2018/10/SOAIY-S52-LED-Bluetooth-Speaker-with-Lights.jpg" class="img-fluid" alt="picture">
+                <img src="../images/koma-cover.jpg" class="img-fluid" alt="picture">
             </div>
           </div>
           <div class="row">
           <div class="col-md-6 column-right d-flex flex-wrap align-items-center">
-            <img src="../LEDCubes.png" class="img-fluid" alt="picture">
+            <img src="../images/koma-image2.jpg" class="img-fluid" alt="picture">
           </div>
           <div class="col-md-6 column-right">
             <h2>Action</h2>
-            <p1>To source the audio data for the analysis an audio sampler had to be created. It is important that the audio quality is as high as possible, since higher quality audio will result in a higher quality analysis. To achieve the highest audio quality possible, an implementation was written that samples audio data directly from the soundcard of the laptop on which the laptop runs. To analyse this audio data, a Fast Fourier Transformation (FFT) algorithm was created. This algorithm accuratly divides audio data in its frequencies, which is then used to create a lightshow. Lastly a bridge implementation was created in order to format the analysis data in a way that was optimal for the LEDCubes project. The data was then send over WiFi to the LEDCubes project.</p1>
+            <p1>What began as a modest documentation endeavor for Koma took an unexpected turn during the initial investigations. Deeper analysis unearthed substantial issues within the codebase of the KControl system. Consequently, the assignment evolved into a comprehensive initiative involving rigorous refactoring and the rectification of significant codebase issues.<br><br>
+
+                This intensive effort yielded numerous benefits. Notably, I addressed several security vulnerabilities, reinforcing the system's resilience against potential threats. Moreover, the performance of the KControl system underwent a substantial improvement, enhancing its efficiency and overall functionality.</p1>
             <h2>Result</h2>
-            <p1>The resulting Sound2Show project is fit to analyse any genre of music. This is quite a feat, since most audio analysis software struggles with fringe types of music like classical or jazz. This was achieved by building a dynamic FFT algorithm from scratch. New insight was also gained into the LEDCubes project, which was documented for potentional future projects. The project was eventually graded with a 10/10, resulting in a Cum Laude graduation.</p1>
+            <p1>The codebase of the KControl infrastructure underwent a substantial overhaul, not only strengthening the existing code but also receiving extensive documentation. A comprehensive set of documents was prepared for the existing IT department, offering insights into common errors within the KControl infrastructure and providing clear, step-by-step instructions on how to rectify them.<br><br>
+
+                This comprehensive effort has culminated in Koma's assurance that the existing KControl systems can be both effectively utilized and maintained successfully, aligning with their commitment to the seamless operation of their crucial infrastructure.</p1>
         </div>
         </div>
       </div>
@@ -119,12 +125,12 @@
           <div class="row">
               <div class="col-md-6 column-right">
                   <h2>Programming Languages</h2>
-                  <p1>The Sound2Show project was largely coded in C++. This language was choosen for its high performance which is crucial in audio analysis. The audio sourcing was programmed in C since it deals with the soundcard directly. The LEDCubes project was already written in Lua, which was then documented.</p1>
+                  <p1>The existing codebase presented a dual architecture, incorporating components in both C++ and Java. The C++ elements were constructed within the QT framework, while the Java components were initially developed using Apache Ant, which was upgraded during development to the Maven build system. Effective communication and interaction between these diverse components were enabled through a combination of secure protocols, including SSL for data encryption, VNC for remote access, and XMPP for real-time messaging and collaboration.</p1>
                   <h2>Development Methods</h2>
-                  <p1>The project was developed using Agile Scrum. Peer reviews were also used to ensure high code quality, since the graduate had not programmed in either C or C++ before.</p1>
+                  <p1>At the outset of the assignment, Koma lacked an existing software development team, resulting in the absence of established development methodologies. However, a modern and structured approach was adopted for the documentation, aligning with contemporary software documentation standards. This approach ensured that the materials produced were comprehensive, organized, and readily accessible, despite the initial absence of established practices.</p1>
               </div>
               <div class="col-md-6 column-right d-flex flex-wrap align-items-center">
-                <img src="https://images.idgesg.net/images/article/2019/03/c-plus-plus_code-100790020-large.jpg?auto=webp&quality=85,70" class="img-fluid" alt="picture">
+                <img src="../images/koma-image3.jpg" class="img-fluid" alt="picture">
             </div>
           </div>
       </div>
@@ -139,14 +145,14 @@
             class="btn btn-outline-light btn-floating m-1"
             href="https://www.linkedin.com/in/robert-dams/"
             role="button"
-            >Linkedin<i class="fab fa-linkedin-in"></i>
+            ><i class="fab fa-linkedin-in"></i>
           </a>
           <!-- Github -->
           <a
             class="btn btn-outline-light btn-floating m-1"
             href="https://github.com/Robert8034"
             role="button"
-            >Github<i class="fab fa-github"></i>
+            ><i class="fab fa-github"></i>
           </a>
         </section>
         <section class="mb-4">
