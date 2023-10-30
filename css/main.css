@@ -95,17 +95,12 @@
 }
 
 .projectColumn {
-  background-image: url(https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg);
   background-size: cover;
   padding: 0;
   display: flex;
   align-items: center;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.projectContainer {
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .projectColumn:after {
@@ -115,18 +110,19 @@
 }
 
 .projectText {
-  width: 90%;
+  width: 100%;
   height: 90%;
   margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 20px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: rgba(24, 24, 32, 0.7);
+  background-color: rgb(33, 35, 50);
   text-decoration: none;
   overflow: hidden;
-  padding: 5px;
 
   -webkit-transition: width 0.75s, height 0.75s, margin 0.75s,
     background-color 0.75s;
@@ -144,8 +140,8 @@
 }
 
 .projectText:hover p1 {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .projectText p1 {
@@ -153,17 +149,50 @@
   font-family: Monsterrat;
   font-weight: bolder;
   font-size: larger;
-  width: initial;
+  margin-left: 5%;
+  margin-right: 5%;
   -webkit-transition: margin 0.75s;
   -moz-transition: margin 0.75s;
   -o-transition: margin 0.75s;
   transition: margin 0.75s;
+  margin-top: auto;
 }
 
 .projectText h1 {
   color: white;
   font-family: Monsterrat;
   font-weight: bolder;
+  margin-top: auto;
+  text-decoration: underline;
+}
+
+.projectPillContainer {
+  width: 90%;
+  height: 20%;
+  margin-top: auto;
+  margin-bottom: 5%;
+  width: initial;
+  -webkit-transition: margin 0.75s;
+  -moz-transition: margin 0.75s;
+  -o-transition: margin 0.75s;
+  transition: margin 0.75s;
+  
+}
+
+.projectText:hover .projectPillContainer {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.projectPill {
+  background-color: rgb(241, 54, 55);
+  border-radius: 20px;
+  font-family: Monsterrat;
+  font-weight: bolder;
+  font-size: medium;
+  margin: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #about {
