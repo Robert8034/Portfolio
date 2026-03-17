@@ -1,4 +1,53 @@
 /* ============================================
+   0. THEME CUSTOM PROPERTIES
+   ============================================ */
+:root {
+    --bg:             #0d1520;
+    --bg-alt:         #111827;
+    --bg-card:        #141e2e;
+    --bg-skill:       #1a2235;
+    --bg-input:       #1a2235;
+    --text:           #f0f0f0;
+    --text-sub:       #c8d0e0;
+    --text-muted:     #b0b0b0;
+    --text-dim:       #888;
+    --text-skill:     #c8d8f0;
+    --text-skill-ai:  #a8c4f5;
+    --accent:         #4f8ef7;
+    --accent-rgb:     79, 142, 247;
+    --border:         #2a3550;
+    --border-card:    #1e2635;
+    --border-input:   #333;
+    --border-footer:  #222;
+    --green:          #4ade80;
+    --green-rgb:      74, 222, 128;
+    --green-dark-rgb: 34, 197, 94;
+}
+
+[data-theme="light"] {
+    --bg:             #f7f8fa;
+    --bg-alt:         #eef0f5;
+    --bg-card:        #ffffff;
+    --bg-skill:       #eef3ff;
+    --bg-input:       #ffffff;
+    --text:           #1a1a2e;
+    --text-sub:       #333344;
+    --text-muted:     #555566;
+    --text-dim:       #777;
+    --text-skill:     #2a4a8a;
+    --text-skill-ai:  #1a3a7a;
+    --accent:         #4f8ef7;
+    --accent-rgb:     79, 142, 247;
+    --border:         #c8d4e8;
+    --border-card:    #dde6f0;
+    --border-input:   #ccd5e0;
+    --border-footer:  #e0e0e0;
+    --green:          #15803d;
+    --green-rgb:      21, 128, 61;
+    --green-dark-rgb: 21, 128, 61;
+}
+
+/* ============================================
    1. RESET & BASE
    ============================================ */
 *,
@@ -16,9 +65,10 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: #0e0e0e;
-    color: #f0f0f0;
+    background-color: var(--bg);
+    color: var(--text);
     line-height: 1.6;
+    transition: background-color 0.25s, color 0.25s;
 }
 
 /* ============================================
@@ -34,7 +84,7 @@ h2 { font-size: 1.8rem; }
 h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
 
 a {
-    color: #4f8ef7;
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -53,7 +103,7 @@ section {
 
 /* Full-width alternate background strip */
 .bg-alt {
-    background-color: #111116;
+    background-color: var(--bg-alt);
     max-width: 100%;
     margin: 0;
     padding: 5rem calc(50vw - 450px + 1.5rem);
@@ -75,7 +125,7 @@ section h2::after {
     bottom: 0;
     width: 2.5rem;
     height: 3px;
-    background-color: #4f8ef7;
+    background-color: var(--accent);
     border-radius: 2px;
 }
 
@@ -98,27 +148,46 @@ section h2::after {
 }
 
 /* ============================================
-   6. LANGUAGE TOGGLE
+   6. CONTROLS (LANGUAGE + THEME TOGGLES)
    ============================================ */
-.lang-toggle {
+.controls {
     position: fixed;
     top: 1.5rem;
     right: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 100;
+}
+
+.lang-toggle,
+.theme-toggle {
     background: transparent;
-    border: 2px solid #4f8ef7;
-    color: #4f8ef7;
+    border: 2px solid var(--accent);
+    color: var(--accent);
     padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
     font-weight: 700;
     cursor: pointer;
     border-radius: 4px;
-    z-index: 100;
     transition: background-color 0.2s, color 0.2s;
+    line-height: 1;
 }
 
-.lang-toggle:hover {
-    background-color: #4f8ef7;
-    color: #0e0e0e;
+.lang-toggle:hover,
+.theme-toggle:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.theme-toggle {
+    padding: 0.3rem 0.45rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle .material-symbols-outlined {
+    font-size: 1.1rem;
 }
 
 /* ============================================
@@ -130,8 +199,8 @@ section h2::after {
     margin: 0;
     padding: 8rem 1.5rem 6rem;
     text-align: center;
-    background-color: #0e0e0e;
-    background-image: radial-gradient(circle, rgba(79, 142, 247, 0.12) 1px, transparent 1px);
+    background-color: var(--bg);
+    background-image: radial-gradient(circle, rgba(var(--accent-rgb), 0.12) 1px, transparent 1px);
     background-size: 28px 28px;
     overflow: hidden;
 }
@@ -144,7 +213,7 @@ section h2::after {
     transform: translate(-50%, -50%);
     width: 700px;
     height: 500px;
-    background: radial-gradient(ellipse, rgba(79, 142, 247, 0.07) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(var(--accent-rgb), 0.07) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
@@ -170,13 +239,13 @@ section h2::after {
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto 1.5rem;
-    border: 3px solid #4f8ef7;
+    border: 3px solid var(--accent);
     animation: photoGlow 3s ease-in-out infinite;
 }
 
 @keyframes photoGlow {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(79, 142, 247, 0.35); }
-    50%       { box-shadow: 0 0 0 10px rgba(79, 142, 247, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0.35); }
+    50%       { box-shadow: 0 0 0 10px rgba(var(--accent-rgb), 0); }
 }
 
 .availability-badge {
@@ -184,11 +253,11 @@ section h2::after {
     align-items: center;
     gap: 0.5rem;
     padding: 0.3rem 1rem;
-    background-color: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(34, 197, 94, 0.3);
+    background-color: rgba(var(--green-dark-rgb), 0.1);
+    border: 1px solid rgba(var(--green-dark-rgb), 0.3);
     border-radius: 100px;
     font-size: 0.82rem;
-    color: #4ade80;
+    color: var(--green);
     letter-spacing: 0.03em;
     margin-bottom: 0.75rem;
 }
@@ -197,32 +266,32 @@ section h2::after {
     display: inline-block;
     width: 7px;
     height: 7px;
-    background-color: #4ade80;
+    background-color: var(--green);
     border-radius: 50%;
     animation: availPulse 2s ease-in-out infinite;
     flex-shrink: 0;
 }
 
 @keyframes availPulse {
-    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4); }
-    50%       { opacity: 0.75; box-shadow: 0 0 0 4px rgba(74, 222, 128, 0); }
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(var(--green-rgb), 0.4); }
+    50%       { opacity: 0.75; box-shadow: 0 0 0 4px rgba(var(--green-rgb), 0); }
 }
 
 .hero-label {
     display: inline-block;
     padding: 0.3rem 1rem;
-    background-color: rgba(79, 142, 247, 0.12);
-    border: 1px solid rgba(79, 142, 247, 0.35);
+    background-color: rgba(var(--accent-rgb), 0.12);
+    border: 1px solid rgba(var(--accent-rgb), 0.35);
     border-radius: 100px;
     font-size: 0.85rem;
-    color: #4f8ef7;
+    color: var(--accent);
     letter-spacing: 0.04em;
     margin-bottom: 1.25rem;
 }
 
 .tagline {
     font-size: 1.15rem;
-    color: #b0b0b0;
+    color: var(--text-muted);
     max-width: 600px;
     margin: 0.75rem auto 2rem;
 }
@@ -230,8 +299,8 @@ section h2::after {
 .cta-button {
     display: inline-block;
     padding: 0.75rem 2rem;
-    background-color: #4f8ef7;
-    color: #0e0e0e;
+    background-color: var(--accent);
+    color: var(--bg);
     font-weight: 700;
     border-radius: 4px;
     text-decoration: none;
@@ -248,8 +317,15 @@ section h2::after {
    ============================================ */
 .about p {
     max-width: 700px;
-    color: #d0d0d0;
+    color: var(--text-sub);
     margin-bottom: 1rem;
+}
+
+.about-anchor {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dim);
 }
 
 /* ============================================
@@ -260,7 +336,7 @@ section h2::after {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #555;
+    color: var(--text-dim);
     margin-bottom: 0.75rem;
     margin-top: 1.5rem;
 }
@@ -278,24 +354,24 @@ section h2::after {
 
 .skill-chip {
     padding: 0.5rem 1.1rem;
-    background-color: #1a1a22;
-    border: 1px solid #2a3550;
+    background-color: var(--bg-skill);
+    border: 1px solid var(--border);
     border-radius: 100px;
     font-size: 0.9rem;
-    color: #c8d8f0;
+    color: var(--text-skill);
 }
 
 .skill-chip--ai {
-    background-color: rgba(79, 142, 247, 0.08);
-    border-color: rgba(79, 142, 247, 0.3);
-    color: #a8c4f5;
+    background-color: rgba(var(--accent-rgb), 0.08);
+    border-color: rgba(var(--accent-rgb), 0.3);
+    color: var(--text-skill-ai);
 }
 
 /* ============================================
    10. SERVICES
    ============================================ */
 .services-intro {
-    color: #b0b0b0;
+    color: var(--text-muted);
     margin-bottom: 2rem;
     max-width: 600px;
 }
@@ -307,28 +383,39 @@ section h2::after {
 }
 
 .service-card {
-    border: 1px solid #2a3550;
-    border-top: 3px solid #4f8ef7;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
     border-radius: 6px;
     padding: 2rem 1.5rem;
-    background-color: #141418;
+    background-color: var(--bg-card);
 }
 
 .service-icon {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #4f8ef7;
+    color: var(--accent);
     opacity: 0.85;
     display: block;
 }
 
+.service-icon.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 32;
+}
+
 .service-card h3 {
-    color: #4f8ef7;
+    color: var(--accent);
 }
 
 .service-card p {
-    color: #c0c0c0;
+    color: var(--text-sub);
     font-size: 0.95rem;
+}
+
+.service-stat {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-style: italic;
 }
 
 .service-tools {
@@ -337,17 +424,99 @@ section h2::after {
     gap: 0.4rem;
     margin-top: 1.25rem;
     padding-top: 1rem;
-    border-top: 1px solid #1e2635;
+    border-top: 1px solid var(--border-card);
 }
 
 .service-tools span {
     padding: 0.2rem 0.65rem;
-    background-color: rgba(79, 142, 247, 0.08);
-    border: 1px solid rgba(79, 142, 247, 0.2);
+    background-color: rgba(var(--accent-rgb), 0.08);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
     border-radius: 100px;
     font-size: 0.78rem;
-    color: #7aaaf0;
+    color: var(--accent);
 }
+
+/* ============================================
+   10b. SECTION CTA (inline, within a section)
+   ============================================ */
+.section-cta {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.section-cta p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+/* ============================================
+   10c. RESULTS
+   ============================================ */
+.results-intro {
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    font-size: 0.95rem;
+}
+
+.results-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 700px;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.result-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.result-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.result-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.result-bar-track {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.result-bar {
+    height: 100%;
+    background: linear-gradient(to right, var(--accent), rgba(var(--accent-rgb), 0.5));
+    border-radius: 4px;
+    width: 0;
+    transition: width 1.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.result-bar.animated {
+    width: var(--target-pct);
+}
+
+.result-source {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+}
+
 
 /* ============================================
    11. HOW I WORK
@@ -370,13 +539,13 @@ section h2::after {
     right: -1rem;
     width: 2rem;
     height: 2px;
-    background: linear-gradient(to right, #4f8ef7, rgba(79, 142, 247, 0.2));
+    background: linear-gradient(to right, var(--accent), rgba(var(--accent-rgb), 0.2));
 }
 
 .step-number {
     font-size: 2rem;
     font-weight: 800;
-    color: #4f8ef7;
+    color: var(--accent);
     opacity: 0.25;
     line-height: 1;
     margin-bottom: 0.75rem;
@@ -386,18 +555,18 @@ section h2::after {
 .process-step h3 {
     font-size: 0.95rem;
     font-weight: 700;
-    color: #f0f0f0;
+    color: var(--text);
     margin-bottom: 0.5rem;
 }
 
 .process-step p {
-    color: #999;
+    color: var(--text-dim);
     font-size: 0.875rem;
     line-height: 1.5;
 }
 
 /* ============================================
-   13. EXPERIENCE
+   12. EXPERIENCE
    ============================================ */
 .exp-list {
     display: flex;
@@ -406,9 +575,9 @@ section h2::after {
 }
 
 .exp-card {
-    border-left: 3px solid #4f8ef7;
+    border-left: 3px solid var(--accent);
     padding: 1.25rem 1.5rem;
-    background-color: #141418;
+    background-color: var(--bg-card);
     border-radius: 0 6px 6px 0;
 }
 
@@ -424,23 +593,23 @@ section h2::after {
 .exp-company {
     font-weight: 700;
     font-size: 1rem;
-    color: #f0f0f0;
+    color: var(--text);
 }
 
 .exp-period {
     font-size: 0.85rem;
-    color: #888;
+    color: var(--text-dim);
 }
 
 .exp-role {
-    color: #4f8ef7;
+    color: var(--accent);
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 0.4rem;
 }
 
 .exp-desc {
-    color: #c0c0c0;
+    color: var(--text-sub);
     font-size: 0.95rem;
 }
 
@@ -448,7 +617,7 @@ section h2::after {
     display: inline-block;
     margin-top: 0.75rem;
     font-size: 0.85rem;
-    color: #4f8ef7;
+    color: var(--accent);
     font-weight: 600;
     transition: opacity 0.2s;
 }
@@ -459,7 +628,7 @@ section h2::after {
 }
 
 /* ============================================
-   12. CREDENTIALS
+   13. CREDENTIALS
    ============================================ */
 .credentials-grid {
     display: grid;
@@ -468,22 +637,22 @@ section h2::after {
 }
 
 .cred-card {
-    border: 1px solid #2a3550;
-    border-top: 3px solid #4f8ef7;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
     border-radius: 6px;
     padding: 1.75rem 1.5rem;
-    background-color: #141418;
+    background-color: var(--bg-card);
 }
 
 .cred-type {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background-color: rgba(79, 142, 247, 0.12);
-    border: 1px solid rgba(79, 142, 247, 0.3);
+    background-color: rgba(var(--accent-rgb), 0.12);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
     border-radius: 100px;
     font-size: 0.75rem;
     font-weight: 600;
-    color: #4f8ef7;
+    color: var(--accent);
     letter-spacing: 0.03em;
     margin-bottom: 0.75rem;
 }
@@ -491,28 +660,56 @@ section h2::after {
 .cred-title {
     font-size: 1rem;
     font-weight: 700;
-    color: #f0f0f0;
+    color: var(--text);
     margin-bottom: 0.3rem;
 }
 
 .cred-institution {
-    color: #4f8ef7;
+    color: var(--accent);
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
 
 .cred-detail {
-    color: #888;
+    color: var(--text-dim);
     font-size: 0.85rem;
 }
 
+.credentials-grid--2col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cred-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+}
+
+.cred-chips span {
+    padding: 0.2rem 0.65rem;
+    background-color: rgba(var(--accent-rgb), 0.08);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
+    border-radius: 100px;
+    font-size: 0.78rem;
+    color: var(--accent);
+}
+
 /* ============================================
-   13. CONTACT
+   14. CONTACT
    ============================================ */
 .contact-subtext {
-    color: #b0b0b0;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.pricing-hint {
+    font-size: 0.9rem;
+    color: var(--text-dim);
     margin-bottom: 2rem;
+    padding: 0.6rem 1rem;
+    border-left: 2px solid rgba(var(--accent-rgb), 0.4);
 }
 
 #contactForm {
@@ -532,10 +729,10 @@ section h2::after {
 #contactForm textarea {
     width: 100%;
     padding: 0.75rem 1rem;
-    background-color: #1a1a1a;
-    border: 1px solid #333;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-input);
     border-radius: 4px;
-    color: #f0f0f0;
+    color: var(--text);
     font-family: inherit;
     font-size: 1rem;
 }
@@ -543,14 +740,14 @@ section h2::after {
 #contactForm input:focus,
 #contactForm textarea:focus {
     outline: none;
-    border-color: #4f8ef7;
+    border-color: var(--accent);
 }
 
 #contactForm button[type="submit"] {
     margin-top: 1rem;
     padding: 0.75rem;
-    background-color: #4f8ef7;
-    color: #0e0e0e;
+    background-color: var(--accent);
+    color: var(--bg);
     font-weight: 700;
     border: none;
     border-radius: 4px;
@@ -565,19 +762,19 @@ section h2::after {
 
 .form-thanks {
     margin-top: 1.5rem;
-    color: #4f8ef7;
+    color: var(--accent);
     font-weight: 600;
 }
 
 /* ============================================
-   14. FOOTER
+   15. FOOTER
    ============================================ */
 .footer {
     text-align: center;
     padding: 2.5rem 1.5rem;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border-footer);
     font-size: 0.9rem;
-    color: #888;
+    color: var(--text-dim);
 }
 
 .footer-links {
@@ -588,7 +785,7 @@ section h2::after {
 }
 
 /* ============================================
-   15. RESPONSIVE
+   16. RESPONSIVE
    ============================================ */
 @media (max-width: 900px) {
     .bg-alt {

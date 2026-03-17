@@ -1,4 +1,37 @@
 /* ============================================
+   CSS CUSTOM PROPERTIES (THEME SYSTEM)
+   ============================================ */
+:root {
+    --bg:             #0d1520;
+    --bg-alt:         #111827;
+    --bg-card:        #141e2e;
+    --bg-skill:       #1a2235;
+    --text:           #f0f0f0;
+    --text-sub:       #c8d0e0;
+    --text-muted:     #b0b0b0;
+    --text-dim:       #888;
+    --accent:         #4f8ef7;
+    --accent-rgb:     79, 142, 247;
+    --border:         #2a3550;
+    --border-footer:  #222;
+}
+
+[data-theme="light"] {
+    --bg:             #f7f8fa;
+    --bg-alt:         #eef0f5;
+    --bg-card:        #ffffff;
+    --bg-skill:       #eef3ff;
+    --text:           #1a1a2e;
+    --text-sub:       #333344;
+    --text-muted:     #555566;
+    --text-dim:       #666;
+    --accent:         #4f8ef7;
+    --accent-rgb:     79, 142, 247;
+    --border:         #c8d4e8;
+    --border-footer:  #e0e0e0;
+}
+
+/* ============================================
    RESET & BASE
    ============================================ */
 *, *::before, *::after {
@@ -14,9 +47,10 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: #0e0e0e;
-    color: #f0f0f0;
+    background-color: var(--bg);
+    color: var(--text);
     line-height: 1.6;
+    transition: background-color 0.25s, color 0.25s;
 }
 
 h1, h2, h3 {
@@ -28,7 +62,7 @@ h1 { font-size: 2rem; }
 h2 { font-size: 1.3rem; }
 
 a {
-    color: #4f8ef7;
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -37,37 +71,56 @@ a:hover {
 }
 
 /* ============================================
-   LANGUAGE TOGGLE
+   CONTROLS (LANGUAGE + THEME TOGGLES)
    ============================================ */
-.lang-toggle {
+.controls {
     position: fixed;
     top: 1.5rem;
     right: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 100;
+}
+
+.lang-toggle,
+.theme-toggle {
     background: transparent;
-    border: 2px solid #4f8ef7;
-    color: #4f8ef7;
+    border: 2px solid var(--accent);
+    color: var(--accent);
     padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
     font-weight: 700;
     cursor: pointer;
     border-radius: 4px;
-    z-index: 100;
     transition: background-color 0.2s, color 0.2s;
+    line-height: 1;
 }
 
-.lang-toggle:hover {
-    background-color: #4f8ef7;
-    color: #0e0e0e;
+.lang-toggle:hover,
+.theme-toggle:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.theme-toggle {
+    padding: 0.3rem 0.45rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle .material-symbols-outlined {
+    font-size: 1.1rem;
 }
 
 /* ============================================
    HERO HEADER
    ============================================ */
 .exp-hero {
-    background-color: #0e0e0e;
-    background-image: radial-gradient(circle, rgba(79, 142, 247, 0.10) 1px, transparent 1px);
+    background-color: var(--bg);
+    background-image: radial-gradient(circle, rgba(var(--accent-rgb), 0.10) 1px, transparent 1px);
     background-size: 28px 28px;
-    border-bottom: 1px solid #1a1a24;
+    border-bottom: 1px solid var(--border);
     padding: 5rem 1.5rem 3.5rem;
     position: relative;
     overflow: hidden;
@@ -81,7 +134,7 @@ a:hover {
     transform: translate(-50%, -50%);
     width: 700px;
     height: 300px;
-    background: radial-gradient(ellipse, rgba(79, 142, 247, 0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(var(--accent-rgb), 0.06) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -93,37 +146,38 @@ a:hover {
 }
 
 .back-link {
-    display: inline-block;
+    display: block;
     font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 1.5rem;
+    color: var(--text-dim);
+    margin-bottom: 1.25rem;
     transition: color 0.2s;
 }
 
 .back-link:hover {
-    color: #4f8ef7;
+    color: var(--accent);
     text-decoration: none;
 }
 
 .exp-company-name {
-    display: inline-block;
+    display: block;
     padding: 0.3rem 1rem;
-    background-color: rgba(79, 142, 247, 0.12);
-    border: 1px solid rgba(79, 142, 247, 0.35);
+    background-color: rgba(var(--accent-rgb), 0.12);
+    border: 1px solid rgba(var(--accent-rgb), 0.35);
     border-radius: 100px;
     font-size: 0.85rem;
-    color: #4f8ef7;
+    color: var(--accent);
     letter-spacing: 0.04em;
     margin-bottom: 1rem;
+    width: fit-content;
 }
 
 .exp-hero-content h1 {
-    color: #f0f0f0;
+    color: var(--text);
     margin-bottom: 0.5rem;
 }
 
 .exp-period-label {
-    color: #888;
+    color: var(--text-dim);
     font-size: 0.95rem;
 }
 
@@ -146,7 +200,7 @@ main {
     position: relative;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
-    color: #4f8ef7;
+    color: var(--accent);
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -160,13 +214,13 @@ main {
     bottom: 0;
     width: 2rem;
     height: 2px;
-    background-color: #4f8ef7;
+    background-color: var(--accent);
     border-radius: 2px;
     opacity: 0.5;
 }
 
 .exp-block p {
-    color: #c8c8c8;
+    color: var(--text-sub);
     max-width: 700px;
     font-size: 1rem;
 }
@@ -175,7 +229,7 @@ main {
    TECH SECTION
    ============================================ */
 .tech-section {
-    background-color: #111116;
+    background-color: var(--bg-alt);
     padding: 3.5rem 1.5rem;
     margin: 0;
     max-width: 100%;
@@ -190,7 +244,7 @@ main {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #888;
+    color: var(--text-dim);
 }
 
 .tech-chips {
@@ -203,11 +257,11 @@ main {
 
 .tech-chip {
     padding: 0.5rem 1.1rem;
-    background-color: #1a1a22;
-    border: 1px solid #2a3550;
+    background-color: var(--bg-skill);
+    border: 1px solid var(--border);
     border-radius: 100px;
     font-size: 0.9rem;
-    color: #c8d8f0;
+    color: var(--text-sub);
 }
 
 /* ============================================
@@ -216,11 +270,11 @@ main {
 .cta-section {
     padding: 4rem 1.5rem;
     text-align: center;
-    border-top: 1px solid #1a1a24;
+    border-top: 1px solid var(--border);
 }
 
 .cta-section p {
-    color: #b0b0b0;
+    color: var(--text-muted);
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
 }
@@ -228,8 +282,8 @@ main {
 .cta-button {
     display: inline-block;
     padding: 0.75rem 2rem;
-    background-color: #4f8ef7;
-    color: #0e0e0e;
+    background-color: var(--accent);
+    color: var(--bg);
     font-weight: 700;
     border-radius: 4px;
     text-decoration: none;
@@ -247,9 +301,9 @@ main {
 .footer {
     text-align: center;
     padding: 2.5rem 1.5rem;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border-footer);
     font-size: 0.9rem;
-    color: #888;
+    color: var(--text-dim);
 }
 
 .footer-links {

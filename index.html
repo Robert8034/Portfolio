@@ -6,6 +6,7 @@
     <title>Robert Dams — Freelance AI & Software Engineer</title>
     <meta name="description" content="Robert Dams — Freelance AI & Software Engineer in de Brainport regio. Procesautomatisering, data & dashboards, systemen koppelen met AI.">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="apple-touch-icon" sizes="180x180" href="portfolio/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="portfolio/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="portfolio/images/favicon-16x16.png">
@@ -13,7 +14,12 @@
 </head>
 <body>
 
-    <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+    <div class="controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="material-symbols-outlined">light_mode</span>
+        </button>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+    </div>
 
     <!-- ===== HERO ===== -->
     <header class="hero" id="home">
@@ -26,8 +32,8 @@
             <p class="hero-label">Freelance AI &amp; Software Engineer</p>
             <h1>Robert Dams</h1>
             <p class="tagline"
-               data-nl="Ik zet AI in om bedrijfsprocessen te automatiseren en data om te zetten naar bruikbare inzichten — zodat jouw team zich kan richten op wat echt telt."
-               data-en="I use AI to automate business processes and turn data into actionable insights — so your team can focus on what truly matters."></p>
+               data-nl="Ik automatiseer de handmatige processen die jouw team tijd kosten en zet bedrijfsdata om naar heldere inzichten — zodat jij kunt sturen op feiten in plaats van gevoel."
+               data-en="I automate the manual processes costing your team time and turn business data into clear insights — so you can make decisions based on facts, not gut feeling."></p>
             <a href="#contact" class="cta-button"
                data-nl="Plan een kennismaking"
                data-en="Book a call"></a>
@@ -38,55 +44,31 @@
     <section class="about" id="about">
         <h2 class="reveal" data-nl="Over mij" data-en="About me"></h2>
         <p class="reveal" style="transition-delay: 0.1s"
-           data-nl="Ik ben een software engineer met 4 jaar ervaring in .NET en Blazor. Ik combineer technische diepgang met een praktische aanpak om MKB-bedrijven in de Brainport regio te helpen slimmer te werken met AI-automatisering."
-           data-en="I'm a software engineer with 4 years of experience in .NET and Blazor. I combine technical depth with a practical approach to help SMEs in the Brainport region work smarter using AI automation."></p>
+           data-nl="Ik ben een software engineer met meer dan 4 jaar ervaring in het bouwen van software voor gemeenten, medische apparatuur en hightech productie. Die achtergrond combineer ik met moderne AI-tools om MKB-bedrijven in de Brainport regio te helpen slimmer te werken."
+           data-en="I'm a software engineer with over 4 years of experience building software for municipalities, medical equipment, and high-tech production. I combine that background with modern AI tools to help SMEs in the Brainport region work smarter."></p>
         <p class="reveal" style="transition-delay: 0.2s"
-           data-nl="Opgegroeid in een familie van techneuten en uitvinders heb ik van jongs af aan een passie voor technologie. Ik geloof dat de beste oplossingen ontstaan op het snijvlak van technische diepgang en menselijk begrip — en dat is precies waar ik me thuis voel."
-           data-en="Raised in a family of engineers and inventors, I've had a passion for technology from an early age. I believe the best solutions emerge at the intersection of technical depth and human understanding — and that's exactly where I feel at home."></p>
-    </section>
-
-    <!-- ===== SKILLS ===== -->
-    <section class="skills bg-alt" id="skills">
-        <h2 class="reveal" data-nl="Technische expertise" data-en="Technical expertise"></h2>
-        <p class="skills-group-label reveal" style="transition-delay: 0.05s"
-           data-nl="AI &amp; Automatisering" data-en="AI &amp; Automation"></p>
-        <div class="skills-grid reveal" style="transition-delay: 0.1s">
-            <span class="skill-chip skill-chip--ai">N8N</span>
-            <span class="skill-chip skill-chip--ai">Power Automate</span>
-            <span class="skill-chip skill-chip--ai">Power BI</span>
-            <span class="skill-chip skill-chip--ai">Azure</span>
-            <span class="skill-chip skill-chip--ai">REST API's</span>
-        </div>
-        <p class="skills-group-label reveal" style="transition-delay: 0.2s"
-           data-nl="Software Engineering" data-en="Software Engineering"></p>
-        <div class="skills-grid reveal" style="transition-delay: 0.25s">
-            <span class="skill-chip">C#</span>
-            <span class="skill-chip">.NET / Blazor</span>
-            <span class="skill-chip">React</span>
-            <span class="skill-chip">PostgreSQL</span>
-            <span class="skill-chip">Docker</span>
-            <span class="skill-chip">Scrum / PSM I</span>
-        </div>
+           data-nl="Opgegroeid in een familie van ingenieurs en uitvinders heb ik altijd een passie gehad voor het omzetten van ideeën naar werkende oplossingen. Als consultant bij bedrijven als Baxter, Koma en ASML leerde ik snel schakelen tussen omgevingen, helder communiceren met klanten en verwachtingen managen — vaardigheden die ik nu inzet voor bedrijven die slimmer willen werken met AI en automatisering."
+           data-en="Raised in a family of engineers and inventors, I've always had a passion for turning ideas into working solutions. As a consultant at companies like Baxter, Koma, and ASML, I learned to quickly adapt between environments, communicate clearly with clients, and manage expectations — skills I now apply for companies that want to work smarter with AI and automation."></p>
     </section>
 
     <!-- ===== SERVICES ===== -->
-    <section class="services" id="services">
+    <section class="services bg-alt" id="services">
         <h2 class="reveal" data-nl="Diensten" data-en="Services"></h2>
         <p class="services-intro reveal" style="transition-delay: 0.1s"
            data-nl="Met behulp van moderne AI-tools en automatiseringsplatforms lever ik oplossingen die direct meetbare impact hebben."
            data-en="Using modern AI tools and automation platforms, I deliver solutions with directly measurable impact."></p>
         <div class="services-grid">
             <div class="service-card reveal" style="transition-delay: 0.15s">
-                <div class="service-icon">⚙</div>
+                <span class="material-symbols-outlined service-icon">autorenew</span>
                 <h3 data-nl="Procesautomatisering" data-en="Process automation"></h3>
-                <p data-nl="Handmatige, repetitieve processen automatiseren met N8N en Power Automate. Minder handwerk, minder fouten, meer tijd voor wat echt telt."
-                   data-en="Automating manual, repetitive processes using N8N and Power Automate. Less manual work, fewer errors, more time for what matters."></p>
+                <p data-nl="Handmatige, repetitieve processen automatiseren met N8N en Power Automate. Minder handwerk, minder fouten, sneller klaar."
+                   data-en="Automating manual, repetitive processes using N8N and Power Automate. Less manual work, fewer errors, faster results."></p>
                 <div class="service-tools">
                     <span>N8N</span><span>Power Automate</span><span>Make</span>
                 </div>
             </div>
             <div class="service-card reveal" style="transition-delay: 0.25s">
-                <div class="service-icon">◈</div>
+                <span class="material-symbols-outlined service-icon">bar_chart</span>
                 <h3 data-nl="Data &amp; dashboards" data-en="Data &amp; dashboards"></h3>
                 <p data-nl="Productie- en bedrijfsdata inzichtelijk maken met Power BI. Van verspreide Excel-bestanden naar een live dashboard dat iedereen begrijpt."
                    data-en="Making production and business data visible with Power BI. From scattered Excel files to a live dashboard everyone can understand."></p>
@@ -95,7 +77,7 @@
                 </div>
             </div>
             <div class="service-card reveal" style="transition-delay: 0.35s">
-                <div class="service-icon">⇄</div>
+                <span class="material-symbols-outlined service-icon">device_hub</span>
                 <h3 data-nl="Systemen verbinden" data-en="Connecting systems"></h3>
                 <p data-nl="Verschillende softwaresystemen en API's aan elkaar koppelen zodat data automatisch stroomt tussen tools, zonder handmatig kopiëren."
                    data-en="Connecting different software systems and APIs so data flows automatically between tools, without manual copying."></p>
@@ -104,10 +86,54 @@
                 </div>
             </div>
         </div>
+        <div class="section-cta reveal" style="transition-delay: 0.4s">
+            <p data-nl="Benieuwd wat dit voor jouw bedrijf kan betekenen?" data-en="Curious what this could mean for your business?"></p>
+            <a href="#contact" class="cta-button" data-nl="Plan een kennismaking" data-en="Book a call"></a>
+        </div>
+    </section>
+
+    <!-- ===== RESULTS ===== -->
+    <section class="results" id="results">
+        <h2 class="reveal" data-nl="Wat levert het op?" data-en="What does it deliver?"></h2>
+        <p class="results-intro reveal" style="transition-delay: 0.1s"
+           data-nl="Gebaseerd op branchegemiddelden. De exacte besparing hangt af van jouw processen — dat brengen we samen in kaart."
+           data-en="Based on industry averages. The exact savings depend on your processes — we map those out together."></p>
+        <div class="results-grid reveal" style="transition-delay: 0.2s">
+            <div class="result-item">
+                <div class="result-label-row">
+                    <span class="result-label" data-nl="Tijdsbesparing op geautomatiseerde taken" data-en="Time saved on automated tasks"></span>
+                    <span class="result-value">60–80%</span>
+                </div>
+                <div class="result-bar-track">
+                    <div class="result-bar" style="--target-pct: 70%"></div>
+                </div>
+                <p class="result-source" data-nl="Procesautomatisering · McKinsey &amp; Forrester" data-en="Process automation · McKinsey &amp; Forrester"></p>
+            </div>
+            <div class="result-item">
+                <div class="result-label-row">
+                    <span class="result-label" data-nl="Tijdsbesparing op rapportage­voorbereiding" data-en="Time saved on report preparation"></span>
+                    <span class="result-value">~70%</span>
+                </div>
+                <div class="result-bar-track">
+                    <div class="result-bar" style="--target-pct: 70%"></div>
+                </div>
+                <p class="result-source" data-nl="Data &amp; dashboards · Power BI benchmark" data-en="Data &amp; dashboards · Power BI benchmark"></p>
+            </div>
+            <div class="result-item">
+                <div class="result-label-row">
+                    <span class="result-label" data-nl="Minder handmatige gegevensinvoer" data-en="Reduction in manual data entry"></span>
+                    <span class="result-value" data-nl="5–10 u/w" data-en="5–10 h/w"></span>
+                </div>
+                <div class="result-bar-track">
+                    <div class="result-bar" style="--target-pct: 60%"></div>
+                </div>
+                <p class="result-source" data-nl="Systeem­integratie · Forrester TEI-onderzoek" data-en="System integration · Forrester TEI research"></p>
+            </div>
+        </div>
     </section>
 
     <!-- ===== HOW I WORK ===== -->
-    <section class="how-i-work bg-alt" id="how-i-work">
+    <section class="how-i-work" id="how-i-work">
         <h2 class="reveal" data-nl="Hoe ik werk" data-en="How I work"></h2>
         <div class="process-steps">
             <div class="process-step reveal" style="transition-delay: 0.05s">
@@ -144,7 +170,7 @@
             <div class="exp-card reveal from-left" style="transition-delay: 0s">
                 <div class="exp-meta">
                     <span class="exp-company">PinkRoccade</span>
-                    <span class="exp-period">02/2024 – heden</span>
+                    <span class="exp-period" data-nl="02/2024 – heden" data-en="02/2024 – present"></span>
                 </div>
                 <p class="exp-role"
                    data-nl="Software Engineer &amp; Scrum Master"
@@ -194,12 +220,16 @@
                 <a class="exp-link" href="experience/asml.html" data-nl="Lees meer →" data-en="Read more →"></a>
             </div>
         </div>
+        <div class="section-cta reveal" style="transition-delay: 0.4s">
+            <p data-nl="Overtuigd? Neem vrijblijvend contact op." data-en="Convinced? Get in touch, no strings attached."></p>
+            <a href="#contact" class="cta-button" data-nl="Plan een kennismaking" data-en="Book a call"></a>
+        </div>
     </section>
 
-    <!-- ===== CREDENTIALS ===== -->
-    <section class="credentials" id="credentials">
-        <h2 class="reveal" data-nl="Opleiding &amp; Certificaten" data-en="Education &amp; Certifications"></h2>
-        <div class="credentials-grid">
+    <!-- ===== BACKGROUND ===== -->
+    <section class="credentials bg-alt" id="credentials">
+        <h2 class="reveal" data-nl="Achtergrond" data-en="Background"></h2>
+        <div class="credentials-grid credentials-grid--2col">
             <div class="cred-card reveal" style="transition-delay: 0.1s">
                 <span class="cred-type" data-nl="Diploma" data-en="Degree"></span>
                 <h3 class="cred-title">Software Engineering</h3>
@@ -209,21 +239,39 @@
                    data-en="Bachelor's · Graduated 2022 · Cum Laude"></p>
             </div>
             <div class="cred-card reveal" style="transition-delay: 0.2s">
-                <span class="cred-type" data-nl="Certificaat" data-en="Certificate"></span>
-                <h3 class="cred-title">Professional Scrum Master I</h3>
-                <p class="cred-institution">Scrum.org / Vijfhart</p>
-                <p class="cred-detail"
-                   data-nl="PSM I · 2024"
-                   data-en="PSM I · 2024"></p>
+                <span class="cred-type" data-nl="Branches" data-en="Sectors"></span>
+                <h3 class="cred-title" data-nl="Bewezen domeinkennis" data-en="Proven domain expertise"></h3>
+                <div class="cred-chips">
+                    <span data-nl="Gemeenten &amp; overheid" data-en="Municipalities &amp; government"></span>
+                    <span data-nl="Medische apparatuur" data-en="Medical equipment"></span>
+                    <span data-nl="Hightech productie" data-en="High-tech production"></span>
+                    <span data-nl="Halfgeleiders" data-en="Semiconductors"></span>
+                </div>
             </div>
-            <div class="cred-card reveal" style="transition-delay: 0.3s">
-                <span class="cred-type" data-nl="Certificaat" data-en="Certificate"></span>
-                <h3 class="cred-title">Software Architecture</h3>
-                <p class="cred-institution">Vijfhart</p>
-                <p class="cred-detail"
-                   data-nl="2024"
-                   data-en="2024"></p>
-            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="skills" id="skills">
+        <h2 class="reveal" data-nl="Technische expertise" data-en="Technical expertise"></h2>
+        <p class="skills-group-label reveal" style="transition-delay: 0.05s"
+           data-nl="AI &amp; Automatisering" data-en="AI &amp; Automation"></p>
+        <div class="skills-grid reveal" style="transition-delay: 0.1s">
+            <span class="skill-chip skill-chip--ai">N8N</span>
+            <span class="skill-chip skill-chip--ai">Power Automate</span>
+            <span class="skill-chip skill-chip--ai">Power BI</span>
+            <span class="skill-chip skill-chip--ai">Azure</span>
+            <span class="skill-chip skill-chip--ai">REST API's</span>
+        </div>
+        <p class="skills-group-label reveal" style="transition-delay: 0.2s"
+           data-nl="Software Engineering" data-en="Software Engineering"></p>
+        <div class="skills-grid reveal" style="transition-delay: 0.25s">
+            <span class="skill-chip">C#</span>
+            <span class="skill-chip">.NET / Blazor</span>
+            <span class="skill-chip">React</span>
+            <span class="skill-chip">PostgreSQL</span>
+            <span class="skill-chip">Docker</span>
+            <span class="skill-chip">Scrum / PSM I</span>
         </div>
     </section>
 
@@ -231,9 +279,9 @@
     <section class="contact bg-alt" id="contact">
         <h2 class="reveal" data-nl="Contact" data-en="Contact"></h2>
         <p class="contact-subtext reveal" style="transition-delay: 0.1s"
-           data-nl="Heb je een vraag of wil je weten wat ik voor jouw bedrijf kan betekenen? Stuur me een bericht."
-           data-en="Have a question or want to know what I can do for your business? Send me a message."></p>
-        <form id="contactForm" class="reveal" style="transition-delay: 0.2s"
+           data-nl="Heb je een vraag of wil je weten wat ik voor jouw bedrijf kan betekenen? Stuur me een bericht — ik reageer binnen 1 werkdag. Het kennismakingsgesprek duurt 30 minuten en is vrijblijvend."
+           data-en="Have a question or want to know what I can do for your business? Send me a message — I respond within 1 business day. The discovery call takes 30 minutes and is free of charge."></p>
+        <form id="contactForm" class="reveal" style="transition-delay: 0.15s"
               action="https://formspree.io/f/xojkpdlp" method="POST">
             <input type="hidden" name="_subject" value="New message from robertdams.com">
             <label for="name" data-nl="Naam" data-en="Name"></label>
@@ -261,7 +309,6 @@
         <div class="footer-links">
             <a href="https://www.linkedin.com/in/robert-dams/" target="_blank" rel="noopener">LinkedIn</a>
             <a href="https://github.com/Robert8034" target="_blank" rel="noopener">GitHub</a>
-            <a href="portfolio/" data-nl="Portfolio" data-en="Portfolio"></a>
         </div>
     </footer>
 

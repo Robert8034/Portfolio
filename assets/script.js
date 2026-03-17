@@ -30,6 +30,26 @@
     // Apply default language on load
     applyLanguage(currentLang);
 
+    // ---------- THEME TOGGLE ----------
+    var themeToggle = document.getElementById("themeToggle");
+    var savedTheme = localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        themeToggle.innerHTML = theme === "dark"
+            ? '<span class="material-symbols-outlined">light_mode</span>'
+            : '<span class="material-symbols-outlined">dark_mode</span>';
+    }
+
+    themeToggle.addEventListener("click", function () {
+        var current = document.documentElement.getAttribute("data-theme");
+        applyTheme(current === "dark" ? "light" : "dark");
+    });
+
+    applyTheme(savedTheme);
+
     // ---------- SCROLL ANIMATIONS ----------
     var revealObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
@@ -43,6 +63,22 @@
     document.querySelectorAll('.reveal').forEach(function (el) {
         revealObserver.observe(el);
     });
+
+    // ---------- RESULTS BAR ANIMATION ----------
+    var resultsSection = document.querySelector('.results');
+    if (resultsSection) {
+        var barObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.result-bar').forEach(function (bar) {
+                        bar.classList.add('animated');
+                    });
+                    barObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        barObserver.observe(resultsSection);
+    }
 
     // ---------- CONTACT FORM ----------
     var form = document.getElementById("contactForm");
