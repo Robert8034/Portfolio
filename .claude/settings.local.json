@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"\\\\.ttf\\\\|\\\\.otf\\\\|ProfilePicture\\\\|LEDCubes\\\\|paddo-run\" 'e:/3. Hobbies/Software Engineering/Projects/Portfolio' --include=*.html --include=*.css)",
+      "WebFetch(domain:www.pexels.com)"
+    ]
+  }
+}
