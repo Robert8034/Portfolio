@@ -26,6 +26,8 @@ No build tools or package managers. Preview locally by opening `index.html` (or 
 
 **Scroll animations:** Elements with `.reveal` start hidden (`opacity: 0`, `translateY`). `.reveal.from-left` shifts from the left instead. An `IntersectionObserver` in `script.js` adds `.visible` once each element enters the viewport (fires once). Hero uses a CSS `@keyframes heroFadeIn` instead (it's above the fold). Stagger is done via inline `style="transition-delay: Xs"`.
 
+**Hover transitions:** Cards (`.service-card`, `.exp-card`, `.cred-card`) and process steps use `transition: property 0.2s` on the base element only — no timing function, nothing on the `:hover` rule. This matches the `.cta-button` pattern and is confirmed to feel snappy. Do not use split transitions, custom easing, or `will-change` — these caused perceived lag.
+
 **Results bar charts:** `.result-bar` elements start at `width: 0` and animate to `var(--target-pct)` via `transition: width 1.3s cubic-bezier(0.4, 0, 0.2, 1)`. A second IntersectionObserver (threshold 0.3) watches `.results` and adds class `.animated` to all `.result-bar` children when the section enters the viewport. Fires once.
 
 **Theme toggle:** Reads `prefers-color-scheme` as default; persists to `localStorage` under key `"theme"`. Sets `data-theme` attribute on `<html>`. Icon updates between `light_mode` and `dark_mode` Material Symbols. Both `assets/script.js` and `experience/lang.js` implement identical logic.

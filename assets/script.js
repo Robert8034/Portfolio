@@ -50,6 +50,24 @@
 
     applyTheme(savedTheme);
 
+    // ---------- HAMBURGER MENU ----------
+    var hamburger = document.getElementById("navHamburger");
+    var navLinks = document.getElementById("navLinks");
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", function () {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("open");
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                hamburger.classList.remove("active");
+                navLinks.classList.remove("open");
+            });
+        });
+    }
+
     // ---------- SCROLL ANIMATIONS ----------
     var revealObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
