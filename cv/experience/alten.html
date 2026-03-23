@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALTEN — Robert Dams</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="../../experience/experience.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../portfolio/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../portfolio/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../portfolio/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="../../portfolio/images/favicon.ico">
+</head>
+<body>
+
+    <div class="controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="material-symbols-outlined">light_mode</span>
+        </button>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+    </div>
+
+    <header class="exp-hero">
+        <div class="exp-hero-content">
+            <a class="back-link" href="../index.html#experience"
+               data-nl="← Terug naar CV" data-en="← Back to CV"></a>
+            <span class="exp-company-name">ALTEN</span>
+            <h1 data-nl="Afstudeerstagiair Software Engineer" data-en="Graduate Software Engineer"></h1>
+            <p class="exp-period-label">02/2022 – 07/2022</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="exp-section">
+            <div class="exp-block">
+                <h2 data-nl="Situatie" data-en="Situation"></h2>
+                <p data-nl="ALTEN is een internationaal consultancybedrijf met meer dan 37.000 engineers in zo'n 30 landen, actief in sectoren als luchtvaart, defensie, energie en banking. Als afstudeerstudent kon ik kiezen uit het verbeteren van een bestaand project of het definiëren van een nieuw project. Sound2Show combineerde beide: een bestaand LED-project (LEDCubes) als visuele output, en een compleet nieuwe real-time audio-analyse implementatie."
+                   data-en="ALTEN is a global consultancy with over 37,000 engineers across roughly 30 countries, active in sectors like aeronautics, defense, energy and banking. As a graduating student, I could choose between improving an existing project or defining a new one. Sound2Show combined both: an existing LED project (LEDCubes) for visual output, and a completely new real-time audio analysis implementation."></p>
+            </div>
+
+            <div class="exp-block">
+                <h2 data-nl="Rol & verantwoordelijkheden" data-en="Role & responsibilities"></h2>
+                <p data-nl="Zelfstandig verantwoordelijk voor het volledige ontwerp en de implementatie van Sound2Show. Mijn primaire taak was het bouwen van een real-time audio-analyse applicatie in C en C++ (gekozen voor performance). Secundair moest ik de geanalyseerde data formatteren en via WiFi doorsturen naar het LEDCubes-project voor een lichtshow-output. Ik werkte volgens een Agile werkwijze met peer reviews om codekwaliteit te waarborgen."
+                   data-en="Independently responsible for the full design and implementation of Sound2Show. My primary task was building a real-time audio analysis application in C and C++ (chosen for performance). Secondarily, I needed to format the analysed data and transmit it via WiFi to the LEDCubes project for lightshow output. I worked following an Agile methodology with peer reviews to ensure code quality."></p>
+            </div>
+
+            <div class="exp-block">
+                <h2 data-nl="Aanpak" data-en="Approach"></h2>
+                <p data-nl="Ik ontwikkelde een audio sampler die geluid rechtstreeks van de geluidskaart kon capturen voor de hoogst mogelijke kwaliteit. Vervolgens bouwde ik een eigen dynamisch Fast Fourier Transformation (FFT) algoritme dat het audiosignaal in real-time opdeelt in frequenties. Ten slotte creëerde ik een bridge-implementatie die de analysedata optimaal formatteert voor het LEDCubes-project en via WiFi verstuurt. Het gehele FFT-algoritme is from scratch opgebouwd, niet gebaseerd op bestaande bibliotheken."
+                   data-en="I developed an audio sampler that captures sound directly from the soundcard for the highest possible quality. Then I built a custom dynamic Fast Fourier Transformation (FFT) algorithm that splits the audio signal into frequencies in real-time. Finally, I created a bridge implementation that optimally formats the analysis data for the LEDCubes project and transmits it via WiFi. The entire FFT algorithm was built from scratch, not based on existing libraries."></p>
+            </div>
+
+            <div class="exp-block">
+                <h2 data-nl="Resultaat" data-en="Result"></h2>
+                <p data-nl="Sound2Show kan elk muziekgenre analyseren — inclusief klassiek en jazz, waar de meeste audio-analysesoftware moeite mee heeft. Het dynamische FFT-algoritme levert betrouwbare frequentiedata ongeacht het type input. Daarnaast heb ik alle inzichten in het LEDCubes-project gedocumenteerd voor toekomstige studenten. Het project is beoordeeld met een 10/10 en ik ben cum laude afgestudeerd."
+                   data-en="Sound2Show can analyse any music genre — including classical and jazz, which most audio analysis software struggles with. The dynamic FFT algorithm delivers reliable frequency data regardless of input type. Additionally, I documented all insights into the LEDCubes project for future students. The project was graded 10/10 and I graduated cum laude."></p>
+            </div>
+        </section>
+
+        <section class="tech-section">
+            <h2 data-nl="Technologieën" data-en="Technologies"></h2>
+            <div class="tech-chips">
+                <span class="tech-chip">C++</span>
+                <span class="tech-chip">C</span>
+                <span class="tech-chip">Lua</span>
+                <span class="tech-chip">FFT</span>
+                <span class="tech-chip" data-nl="Real-time audio" data-en="Real-time audio"></span>
+                <span class="tech-chip">WiFi</span>
+                <span class="tech-chip">Agile / Scrum</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Robert Dams</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/robert-dams/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/Robert8034" target="_blank" rel="noopener">GitHub</a>
+            <a href="../index.html" data-nl="← Terug naar CV" data-en="← Back to CV"></a>
+        </div>
+    </footer>
+
+    <script src="lang.js"></script>
+</body>
+</html>

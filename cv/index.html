@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Dams — Scrum Master | CV</title>
+    <meta name="description" content="CV van Robert Dams — PSM I gecertificeerd Scrum Master met hands-on .NET-achtergrond. Beschikbaar voor vast dienstverband in de regio Eindhoven.">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="cv.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../portfolio/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../portfolio/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../portfolio/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="../portfolio/images/favicon.ico">
+</head>
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <nav class="site-nav" id="siteNav">
+        <a href="#home" class="nav-logo">Robert Dams</a>
+        <div class="nav-links" id="navLinks">
+            <a href="#profile" data-nl="Profiel" data-en="Profile"></a>
+            <a href="#experience" data-nl="Ervaring" data-en="Experience"></a>
+            <a href="#how-i-work" data-nl="Werkwijze" data-en="How I work"></a>
+            <a href="#sprint-check" data-nl="Sprint Check" data-en="Sprint Check"></a>
+            <a href="#skills" data-nl="Vaardigheden" data-en="Skills"></a>
+            <a href="#certifications" data-nl="Opleiding" data-en="Education"></a>
+        </div>
+        <div class="nav-controls">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="material-symbols-outlined">light_mode</span>
+            </button>
+            <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+            <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <img src="../assets/photo.jpg" alt="Robert Dams" class="hero-photo">
+            <p class="availability-badge">
+                <span class="avail-dot"></span>
+                <span data-nl="Beschikbaar · Vast dienstverband · Regio Eindhoven" data-en="Available · Permanent · Eindhoven area"></span>
+            </p>
+            <p class="hero-label">Scrum Master</p>
+            <h1>Robert Dams</h1>
+            <p class="tagline"
+               data-nl="PSM I gecertificeerd Scrum Master met een technische achtergrond in .NET. Ik help teams voorspelbaar leveren, impediments oplossen en continu verbeteren."
+               data-en="PSM I certified Scrum Master with a technical background in .NET. I help teams deliver predictably, remove impediments and improve continuously."></p>
+            <p class="print-contact">
+                robert-dams@outlook.com · linkedin.com/in/robert-dams · github.com/Robert8034
+            </p>
+            <div class="hero-ctas">
+                <button class="cta-button" id="printBtn"
+                        data-nl="Download CV (PDF)" data-en="Download CV (PDF)"></button>
+                <a href="#experience" class="hero-scroll-link"
+                   data-nl="Bekijk mijn ervaring ↓"
+                   data-en="See my experience ↓"></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="profile bg-alt" id="profile">
+        <h2 class="reveal" data-nl="Profiel" data-en="Profile"></h2>
+        <p class="reveal" style="transition-delay: 0.1s"
+           data-nl="Mijn pad naar Scrum Master begon niet met een certificaat, maar met ervaring. Als stagiair bij ASML maakte ik voor het eerst mee hoe een goed georganiseerd Scrum-team functioneert. Bij Koma was er geen proces — dus voerde ik zelf korte iteratiecycli en gestructureerde rapportage in. Bij Baxter groeide ik in twee maanden van developer naar Tech Lead van een team van vier engineers. Bij PinkRoccade werd ik gevraagd om naast mijn ontwikkelwerk de Scrum Master-rol te vervullen voor een team van zes."
+           data-en="My path to Scrum Master didn't start with a certificate, but with experience. As an intern at ASML, I first experienced how a well-organised Scrum team operates. At Koma, there was no process — so I introduced short iteration cycles and structured reporting myself. At Baxter, I grew from developer to Tech Lead of a team of four engineers within two months. At PinkRoccade, I was asked to take on the Scrum Master role alongside my development work for a team of six."></p>
+        <p class="reveal" style="transition-delay: 0.15s"
+           data-nl="Wat mij onderscheidt: ik begrijp de technische realiteit van het team. Ik weet wanneer een inschatting te optimistisch is, wanneer technische schuld een impediment wordt en wanneer een architectuurbeslissing het sprintdoel in gevaar brengt. Die combinatie van hands-on ervaring en Scrum-kennis maakt dat ik teams effectief kan helpen verbeteren."
+           data-en="What sets me apart: I understand the technical reality of the team. I know when an estimate is too optimistic, when technical debt becomes an impediment and when an architecture decision puts the sprint goal at risk. That combination of hands-on experience and Scrum knowledge allows me to help teams improve effectively."></p>
+        <div class="colleague-tags reveal" style="transition-delay: 0.2s">
+            <span class="colleague-tags-label" data-nl="Collega's omschrijven mij als" data-en="Colleagues describe me as"></span>
+            <span class="colleague-tag" data-nl="Rustig onder druk" data-en="Calm under pressure"></span>
+            <span class="colleague-tag" data-nl="Doelgedreven" data-en="Goal-driven"></span>
+            <span class="colleague-tag" data-nl="Communicatief sterk" data-en="Strong communicator"></span>
+            <span class="colleague-tag" data-nl="Betrouwbaar" data-en="Reliable"></span>
+            <span class="colleague-tag" data-nl="Sociaal" data-en="Personable"></span>
+        </div>
+    </section>
+
+    <!-- Photo banner: replace the placeholder content with a real photo via CSS background-image -->
+    <div class="photo-banner reveal">
+        <span class="material-symbols-outlined photo-banner-icon">photo_camera</span>
+        <span class="photo-banner-text" data-nl="Foto: binnenkort beschikbaar" data-en="Photo: coming soon"></span>
+    </div>
+
+    <section class="experience" id="experience">
+        <h2 class="reveal" data-nl="Werkervaring" data-en="Work Experience"></h2>
+
+        <div class="vtl">
+
+            <div class="vtl-entry expanded reveal" data-index="0" style="transition-delay: 0.1s">
+                <div class="vtl-dot vtl-dot--current"></div>
+                <div class="vtl-content">
+                    <button class="vtl-expand-btn" aria-label="Toggle details">
+                        <div class="vtl-header">
+                            <h3><span class="material-symbols-outlined vtl-icon">groups</span>PinkRoccade</h3>
+                            <span class="vtl-period" data-nl="02/2024 – heden" data-en="02/2024 – present"></span>
+                        </div>
+                        <p class="vtl-role" data-nl="Software Engineer & Scrum Master" data-en="Software Engineer & Scrum Master"></p>
+                        <span class="material-symbols-outlined vtl-chevron">expand_more</span>
+                    </button>
+                    <p class="vtl-scrum"
+                       data-nl="Scrum Master van een team van 6. QA geïntegreerd in het sprintproces: feedbackcycli van dagen naar uren. Sprint planning, refinement en retrospectives gestructureerd."
+                       data-en="Scrum Master of a 6-person team. Integrated QA into the sprint process: feedback cycles cut from days to hours. Structured sprint planning, refinement and retrospectives."></p>
+                    <div class="vtl-expandable">
+                        <p class="vtl-desc"
+                           data-nl=".NET/Blazor developer voor gemeentelijke SaaS-software (30+ gemeenten). Meerdere REST API's ontworpen en in productie gebracht. PSM I en Software Architecture certificaat behaald."
+                           data-en=".NET/Blazor developer for municipal SaaS software (30+ municipalities). Designed and shipped multiple REST APIs to production. Earned PSM I and Software Architecture certificates."></p>
+                        <div class="vtl-tags">
+                            <span class="vtl-tag">Scrum Master</span>
+                            <span class="vtl-tag">PSM I</span>
+                            <span class="vtl-tag">.NET 8</span>
+                            <span class="vtl-tag">Blazor</span>
+                            <span class="vtl-tag">PostgreSQL</span>
+                            <span class="vtl-tag">REST API</span>
+                        </div>
+                        <a href="experience/pinkroccade.html" class="vtl-more"
+                           data-nl="Lees meer →" data-en="Read more →"></a>
+                    </div>
+                    <!-- FUTURE: .vtl-photo for employer/scene image -->
+                </div>
+            </div>
+
+            <div class="vtl-entry reveal" data-index="1" style="transition-delay: 0.15s">
+                <div class="vtl-dot vtl-dot--lg"></div>
+                <div class="vtl-content">
+                    <button class="vtl-expand-btn" aria-label="Toggle details">
+                        <div class="vtl-header">
+                            <h3><span class="material-symbols-outlined vtl-icon">architecture</span>Baxter</h3>
+                            <span class="vtl-period">05/2023 – 02/2024</span>
+                        </div>
+                        <p class="vtl-role" data-nl="Consultant Software Engineer (Tech Lead)" data-en="Consultant Software Engineer (Tech Lead)"></p>
+                        <span class="material-symbols-outlined vtl-chevron">expand_more</span>
+                    </button>
+                    <p class="vtl-scrum"
+                       data-nl="In 2 maanden van developer naar Tech Lead. Team van 4 engineers gecoördineerd: technische beslissingen, code reviews, kennisdeling en sprintvoortgang bewaakt."
+                       data-en="From developer to Tech Lead in 2 months. Coordinated a team of 4 engineers: technical decisions, code reviews, knowledge sharing and sprint progress tracking."></p>
+                    <div class="vtl-expandable">
+                        <p class="vtl-desc"
+                           data-nl="Architectuurmigratie geleid: 20 verweven applicaties geconsolideerd naar 2 kerncomponenten via SignalR en .NET API. Wekelijkse afstemming met architect en stakeholders."
+                           data-en="Led an architectural migration: consolidated 20 tightly coupled applications into 2 core components via SignalR and .NET API. Weekly alignment with architect and stakeholders."></p>
+                        <div class="vtl-tags">
+                            <span class="vtl-tag" data-nl="Tech Lead" data-en="Tech Lead"></span>
+                            <span class="vtl-tag" data-nl="Team van 4" data-en="Team of 4"></span>
+                            <span class="vtl-tag">C#</span>
+                            <span class="vtl-tag">.NET API</span>
+                            <span class="vtl-tag">SignalR</span>
+                            <span class="vtl-tag">WPF</span>
+                        </div>
+                        <a href="experience/baxter.html" class="vtl-more"
+                           data-nl="Lees meer →" data-en="Read more →"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vtl-entry reveal" data-index="2" style="transition-delay: 0.2s">
+                <div class="vtl-dot vtl-dot--md"></div>
+                <div class="vtl-content">
+                    <button class="vtl-expand-btn" aria-label="Toggle details">
+                        <div class="vtl-header">
+                            <h3><span class="material-symbols-outlined vtl-icon">build</span>Koma</h3>
+                            <span class="vtl-period">09/2022 – 05/2023</span>
+                        </div>
+                        <p class="vtl-role" data-nl="Consultant Software Engineer" data-en="Consultant Software Engineer"></p>
+                        <span class="material-symbols-outlined vtl-chevron">expand_more</span>
+                    </button>
+                    <p class="vtl-scrum"
+                       data-nl="Geen formeel proces aanwezig — zelf korte iteratiecycli en gestructureerde rapportage ingevoerd. Directe rapportage aan de directeur."
+                       data-en="No formal methodology in place — introduced short iteration cycles and structured reporting myself. Reported directly to the director."></p>
+                    <div class="vtl-expandable">
+                        <p class="vtl-desc"
+                           data-nl="Zelfstandig een C++/Java legacy-codebase gedocumenteerd, beveiligingslekken gedicht en build-pipeline gemoderniseerd (Ant → Maven). IT-team zelfvoorzienend gemaakt."
+                           data-en="Independently documented a C++/Java legacy codebase, patched security vulnerabilities and modernised the build pipeline (Ant → Maven). Made the IT team self-sufficient."></p>
+                        <div class="vtl-tags">
+                            <span class="vtl-tag" data-nl="Procesverbetering" data-en="Process improvement"></span>
+                            <span class="vtl-tag" data-nl="Solo engineer" data-en="Solo engineer"></span>
+                            <span class="vtl-tag">C++</span>
+                            <span class="vtl-tag">Java</span>
+                            <span class="vtl-tag">Maven</span>
+                        </div>
+                        <a href="experience/koma.html" class="vtl-more"
+                           data-nl="Lees meer →" data-en="Read more →"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vtl-entry reveal" data-index="3" style="transition-delay: 0.25s">
+                <div class="vtl-dot vtl-dot--sm"></div>
+                <div class="vtl-content">
+                    <button class="vtl-expand-btn" aria-label="Toggle details">
+                        <div class="vtl-header">
+                            <h3><span class="material-symbols-outlined vtl-icon">school</span>ALTEN</h3>
+                            <span class="vtl-period">02/2022 – 07/2022</span>
+                        </div>
+                        <p class="vtl-role" data-nl="Afstudeerstagiair Software Engineer" data-en="Graduate Software Engineer"></p>
+                        <span class="material-symbols-outlined vtl-chevron">expand_more</span>
+                    </button>
+                    <p class="vtl-scrum"
+                       data-nl="Agile werkwijze met peer reviews voor codekwaliteit. Zelfstandig complex technisch onderzoek uitgevoerd en opgeleverd."
+                       data-en="Agile workflow with peer reviews for code quality. Independently executed and delivered complex technical research."></p>
+                    <div class="vtl-expandable">
+                        <p class="vtl-desc"
+                           data-nl="Real-time audio-analyse applicatie ontwikkeld met een custom Fast Fourier Transformation. Audio sampling, frequentieanalyse en bridge naar LED-systeem. Beoordeling: 10/10, cum laude afgestudeerd."
+                           data-en="Developed a real-time audio analysis application with a custom Fast Fourier Transformation. Audio sampling, frequency analysis and bridge to LED system. Grade: 10/10, graduated cum laude."></p>
+                        <div class="vtl-tags">
+                            <span class="vtl-tag" data-nl="Afstudeerproject" data-en="Graduation project"></span>
+                            <span class="vtl-tag">C++</span>
+                            <span class="vtl-tag">C</span>
+                            <span class="vtl-tag">Lua</span>
+                            <span class="vtl-tag">FFT</span>
+                        </div>
+                        <a href="experience/alten.html" class="vtl-more"
+                           data-nl="Lees meer →" data-en="Read more →"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vtl-entry reveal" data-index="4" style="transition-delay: 0.3s">
+                <div class="vtl-dot"></div>
+                <div class="vtl-content">
+                    <button class="vtl-expand-btn" aria-label="Toggle details">
+                        <div class="vtl-header">
+                            <h3><span class="material-symbols-outlined vtl-icon">precision_manufacturing</span>ASML</h3>
+                            <span class="vtl-period">08/2020 – 02/2021</span>
+                        </div>
+                        <p class="vtl-role" data-nl="Stagiair Software Engineer" data-en="Software Engineering Intern"></p>
+                        <span class="material-symbols-outlined vtl-chevron">expand_more</span>
+                    </button>
+                    <p class="vtl-scrum"
+                       data-nl="Eerste professionele Scrum-omgeving: standups, sprint reviews en retrospectives in een multidisciplinair team."
+                       data-en="First professional Scrum environment: standups, sprint reviews and retrospectives within a cross-functional team."></p>
+                    <div class="vtl-expandable">
+                        <p class="vtl-desc"
+                           data-nl="Codegeneratie-tool gebouwd (C#/WPF) die het toevoegen van KPI's aan het rapportagesysteem automatiseerde: van twee weken naar minuten per KPI. Tool overgenomen door het Reporting-team."
+                           data-en="Built a code generation tool (C#/WPF) that automated adding KPIs to the reporting system: from two weeks to minutes per KPI. Tool adopted by the Reporting team."></p>
+                        <div class="vtl-tags">
+                            <span class="vtl-tag" data-nl="Eerste Scrum-ervaring" data-en="First Scrum experience"></span>
+                            <span class="vtl-tag">C#</span>
+                            <span class="vtl-tag">WPF</span>
+                            <span class="vtl-tag" data-nl="Codegeneratie" data-en="Code generation"></span>
+                        </div>
+                        <a href="experience/asml.html" class="vtl-more"
+                           data-nl="Lees meer →" data-en="Read more →"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="how-i-work bg-alt" id="how-i-work">
+        <h2 class="reveal" data-nl="Hoe ik werk met teams" data-en="How I work with teams"></h2>
+        <div class="scenarios-grid">
+
+            <div class="scenario-card reveal" style="transition-delay: 0.1s">
+                <span class="material-symbols-outlined scenario-icon">group</span>
+                <h3 data-nl="Als het team vastloopt" data-en="When the team gets stuck"></h3>
+                <p data-nl="Als een sprint vastloopt, duw ik niet harder. Ik breng het team bij elkaar, identificeer de blokkade en ruim die op. Bij PinkRoccade betekende dat het integreren van QA in het sprintproces, waardoor feedbackcycli van dagen naar uren gingen."
+                   data-en="When a sprint stalls, I don't push harder. I bring the team together, identify the blocker, and remove it. At PinkRoccade, that meant integrating QA into the sprint process, cutting feedback cycles from days to hours."></p>
+            </div>
+
+            <div class="scenario-card reveal" style="transition-delay: 0.2s">
+                <span class="material-symbols-outlined scenario-icon">sync_alt</span>
+                <h3 data-nl="Als requirements verschuiven" data-en="When requirements shift"></h3>
+                <p data-nl="Stakeholders veranderen van gedachten. Dat is geen probleem, dat is informatie. Ik bescherm het sprintdoel en houd de backlog eerlijk. Bij Baxter coördineerde ik een migratie van 20 systemen zonder dat scope creep het team ontspoorde."
+                   data-en="Stakeholders change their minds. That's not a problem, that's information. I protect the sprint goal and keep the backlog honest. At Baxter, I coordinated a migration across 20 systems without letting scope creep derail the team."></p>
+            </div>
+
+            <div class="scenario-card reveal" style="transition-delay: 0.3s">
+                <span class="material-symbols-outlined scenario-icon">tune</span>
+                <h3 data-nl="Als het proces overhead voelt" data-en="When process feels like overhead"></h3>
+                <p data-nl="Als een ceremonie nutteloos aanvoelt, pas ik het aan. Retrospectives moeten echte verbeteringen opleveren, niet een tijdslot vullen. Ik meet wat ertoe doet: levert het team meer, met minder verrassingen?"
+                   data-en="When a ceremony feels pointless, I change it. Retrospectives should drive real improvements, not fill a time slot. I measure what matters: is the team shipping more, with fewer surprises?"></p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="testimonial" id="testimonial">
+        <div class="testimonial-card reveal">
+            <span class="material-symbols-outlined testimonial-icon">format_quote</span>
+            <blockquote class="testimonial-quote"
+                        data-nl="&ldquo;Hier komt een aanbeveling van een collega of leidinggevende.&rdquo;"
+                        data-en="&ldquo;A colleague or manager recommendation will be placed here.&rdquo;"></blockquote>
+            <p class="testimonial-author" data-nl="— Naam, Rol bij Bedrijf" data-en="— Name, Role at Company"></p>
+        </div>
+    </section>
+
+    <section class="sprint-check" id="sprint-check">
+        <h2 class="reveal" data-nl="Sprint Health Check" data-en="Sprint Health Check"></h2>
+        <p class="sprint-check-intro reveal" style="transition-delay: 0.1s"
+           data-nl="Deze interactieve check demonstreert hoe ik naar teamprocessen kijk. Probeer het zelf — beantwoord zes vragen."
+           data-en="This interactive check demonstrates how I look at team processes. Try it yourself — answer six questions."></p>
+
+        <div class="check-questions reveal" id="checkQuestions" style="transition-delay: 0.15s">
+            <div class="check-question" data-q="0">
+                <span class="check-question-text"
+                      data-nl="Rondt je team af wat ze plannen in een sprint?"
+                      data-en="Does your team finish what they plan each sprint?"></span>
+                <div class="check-toggle">
+                    <button class="check-btn" data-answer="yes" data-nl="Ja" data-en="Yes"></button>
+                    <button class="check-btn" data-answer="no" data-nl="Nee" data-en="No"></button>
+                </div>
+            </div>
+            <div class="check-question" data-q="1">
+                <span class="check-question-text"
+                      data-nl="Worden actiepunten uit retrospectives daadwerkelijk opgepakt?"
+                      data-en="Do retrospective action items actually get implemented?"></span>
+                <div class="check-toggle">
+                    <button class="check-btn" data-answer="yes" data-nl="Ja" data-en="Yes"></button>
+                    <button class="check-btn" data-answer="no" data-nl="Nee" data-en="No"></button>
+                </div>
+            </div>
+            <div class="check-question" data-q="2">
+                <span class="check-question-text"
+                      data-nl="Kan het team deployen zonder te wachten op andere teams?"
+                      data-en="Can your team deploy independently, without waiting on other teams?"></span>
+                <div class="check-toggle">
+                    <button class="check-btn" data-answer="yes" data-nl="Ja" data-en="Yes"></button>
+                    <button class="check-btn" data-answer="no" data-nl="Nee" data-en="No"></button>
+                </div>
+            </div>
+            <div class="check-question" data-q="3">
+                <span class="check-question-text"
+                      data-nl="Weten stakeholders het sprintdoel voordat de sprint begint?"
+                      data-en="Do stakeholders know the sprint goal before the sprint starts?"></span>
+                <div class="check-toggle">
+                    <button class="check-btn" data-answer="yes" data-nl="Ja" data-en="Yes"></button>
+                    <button class="check-btn" data-answer="no" data-nl="Nee" data-en="No"></button>
+                </div>
+            </div>
+            <div class="check-question" data-q="4">
+                <span class="check-question-text"
+                      data-nl="Heeft je team minder dan 3 onopgeloste impediments?"
+                      data-en="Does your team have fewer than 3 unresolved impediments right now?"></span>
+                <div class="check-toggle">
+                    <button class="check-btn" data-answer="yes" data-nl="Ja" data-en="Yes"></button>
+                    <button class="check-btn" data-answer="no" data-nl="Nee" data-en="No"></button>
+                </div>
+            </div>
+            <div class="check-question" data-q="5">
+                <span class="check-question-text"
+                      data-nl="Kan elk teamlid uitleggen waar ze aan werken en waarom?"
+                      data-en="Can any team member explain what they're working on and why?"></span>
+                <div class="check-toggle">
+                    <button class="check-btn" data-answer="yes" data-nl="Ja" data-en="Yes"></button>
+                    <button class="check-btn" data-answer="no" data-nl="Nee" data-en="No"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="check-result reveal" id="checkResult" style="transition-delay: 0.2s" hidden>
+            <div class="check-score-ring">
+                <span class="check-score-number" id="checkScoreNumber">0</span>
+                <span class="check-score-total">/6</span>
+            </div>
+            <p class="check-feedback" id="checkFeedback"></p>
+        </div>
+    </section>
+
+    <section class="bg-alt" id="skills">
+        <h2 class="reveal" data-nl="Vaardigheden" data-en="Skills"></h2>
+
+        <p class="skills-group-label reveal" style="transition-delay: 0.1s"
+           data-nl="Scrum & Leiderschap" data-en="Scrum & Leadership"></p>
+        <div class="skills-grid reveal" style="transition-delay: 0.12s">
+            <span class="skill-chip skill-chip--ai" data-nl="Sprint Facilitatie" data-en="Sprint Facilitation"></span>
+            <span class="skill-chip skill-chip--ai">Retrospectives</span>
+            <span class="skill-chip skill-chip--ai" data-nl="Impediment Management" data-en="Impediment Management"></span>
+            <span class="skill-chip skill-chip--ai" data-nl="Backlog Refinement" data-en="Backlog Refinement"></span>
+            <span class="skill-chip skill-chip--ai" data-nl="Stakeholder Management" data-en="Stakeholder Management"></span>
+            <span class="skill-chip skill-chip--ai" data-nl="Team Coaching" data-en="Team Coaching"></span>
+            <span class="skill-chip skill-chip--ai" data-nl="QA-integratie" data-en="QA Integration"></span>
+            <span class="skill-chip skill-chip--ai">Continuous Improvement</span>
+        </div>
+
+        <p class="skills-group-label reveal" style="transition-delay: 0.15s"
+           data-nl="Technisch" data-en="Technical"></p>
+        <div class="skills-grid reveal" style="transition-delay: 0.17s">
+            <span class="skill-chip">C#</span>
+            <span class="skill-chip">.NET 8</span>
+            <span class="skill-chip">Blazor</span>
+            <span class="skill-chip">ASP.NET Core</span>
+            <span class="skill-chip">PostgreSQL</span>
+            <span class="skill-chip">REST API</span>
+            <span class="skill-chip">Azure DevOps</span>
+            <span class="skill-chip">Docker</span>
+            <span class="skill-chip">Git</span>
+            <span class="skill-chip">SignalR</span>
+            <span class="skill-chip">WPF</span>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="reveal" data-nl="Projecten" data-en="Projects"></h2>
+        <div class="project-grid">
+
+            <div class="project-card reveal" style="transition-delay: 0.1s">
+                <h3>robertdams.com</h3>
+                <p data-nl="Freelance portfolio site gebouwd zonder frameworks. Tweetalig, licht/donker thema, gedeployd via GitHub Pages."
+                   data-en="Freelance portfolio site built without frameworks. Bilingual, light/dark theme, deployed via GitHub Pages."></p>
+                <div class="project-tags">
+                    <span class="project-tag">HTML</span>
+                    <span class="project-tag">CSS</span>
+                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">GitHub Pages</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://robertdams.com" target="_blank" rel="noopener"
+                       data-nl="Bekijk site" data-en="View site"></a>
+                </div>
+            </div>
+
+            <div class="project-card placeholder reveal" style="transition-delay: 0.2s">
+                <h3 data-nl="Binnenkort" data-en="Coming soon"></h3>
+                <p data-nl="Project in ontwikkeling." data-en="Project in development."></p>
+            </div>
+
+            <div class="project-card placeholder reveal" style="transition-delay: 0.3s">
+                <h3 data-nl="Binnenkort" data-en="Coming soon"></h3>
+                <p data-nl="Project in ontwikkeling." data-en="Project in development."></p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="certifications bg-alt" id="certifications">
+        <h2 class="reveal" data-nl="Certificeringen & Opleiding" data-en="Certifications & Education"></h2>
+        <div class="credentials-grid">
+
+            <div class="cred-card reveal" style="transition-delay: 0.1s">
+                <h3>PSM I</h3>
+                <p data-nl="Professional Scrum Master I" data-en="Professional Scrum Master I"></p>
+                <p class="cred-org">Scrum.org &middot; 2025</p>
+            </div>
+
+            <div class="cred-card reveal" style="transition-delay: 0.2s">
+                <h3 data-nl="Software Architecture" data-en="Software Architecture"></h3>
+                <p data-nl="Certificaat" data-en="Certificate"></p>
+                <p class="cred-org">Vijfhart &middot; 2024</p>
+            </div>
+
+            <div class="cred-card reveal" style="transition-delay: 0.3s">
+                <h3 data-nl="HBO Software Development" data-en="Bachelor Software Development"></h3>
+                <p>Fontys Hogescholen Eindhoven</p>
+                <p class="cred-org" data-nl="Cum Laude &middot; 2022" data-en="Cum Laude &middot; 2022"></p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="personal" id="personal">
+        <h2 class="reveal" data-nl="Persoonlijke gegevens" data-en="Personal details"></h2>
+        <div class="personal-grid reveal" style="transition-delay: 0.1s">
+            <div class="personal-item">
+                <span class="personal-label" data-nl="Geboortedatum" data-en="Date of birth"></span>
+                <span class="personal-value">18-05-2000</span>
+            </div>
+            <div class="personal-item">
+                <span class="personal-label" data-nl="Locatie" data-en="Location"></span>
+                <span class="personal-value">Regio Eindhoven, Noord-Brabant</span>
+            </div>
+            <div class="personal-item">
+                <span class="personal-label" data-nl="Rijbewijs" data-en="Driving licence"></span>
+                <span class="personal-value">B</span>
+            </div>
+            <div class="personal-item">
+                <span class="personal-label" data-nl="Talen" data-en="Languages"></span>
+                <span class="personal-value" data-nl="Nederlands (moedertaal) · Engels (IB certificaat) · Duits (basisniveau)" data-en="Dutch (native) · English (IB certificate) · German (basic)"></span>
+            </div>
+            <div class="personal-item">
+                <span class="personal-label" data-nl="Interesses" data-en="Interests"></span>
+                <span class="personal-value" data-nl="Sporten, reizen, gitaar spelen, tuinieren" data-en="Sports, travelling, playing guitar, gardening"></span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="cv-footer">
+        <div class="cv-footer-links">
+            <a href="https://www.linkedin.com/in/robert-dams/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/Robert8034" target="_blank" rel="noopener">GitHub</a>
+            <a href="../index.html" data-nl="← robertdams.com" data-en="← robertdams.com"></a>
+        </div>
+        <button class="cv-pdf-link" id="printBtnFooter"
+                data-nl="PDF nodig? Download hier" data-en="Need a PDF? Download here"></button>
+        <p>&copy; 2026 Robert Dams</p>
+    </footer>
+
+    <script src="cv.js"></script>
+</body>
+</html>
