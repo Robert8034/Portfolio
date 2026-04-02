@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This repo hosts **two static sites** deployed via GitHub Pages at robertdams.com. There is no build system — changes go live by pushing to `master`. A `.nojekyll` file disables Jekyll processing.
 
 - **Root (`/`)** — Freelance landing page (bilingual NL/EN). Primary goal: function as a **call card for potential freelance customers** — conversion-focused. Gets the visitor to book a call.
+- **`/cv`** — Recruiter-facing CV site. Scrum Master positioning. Shared directly with recruiters via LinkedIn — not for random discovery (`noindex`). See `/cv` architecture section below.
 - **`/portfolio`** — Legacy code. Not linked from the active site and not part of the product. Kept in the repo as reference material — useful for understanding Robert's background and past work, and may be mined for content later.
 
 ## Development
@@ -49,6 +50,21 @@ Four standalone detail pages, one per employer. They share a design identical to
 
 Each page follows a Situatie → Opdracht → Aanpak → Resultaat structure, ends with a tech stack and a CTA linking back to `../index.html#contact`. Back link points to `../index.html#experience`.
 
+### CV site (`/cv`) — recruiter-facing, do not link from freelance site
+
+- **[cv/index.html](cv/index.html)** — Single-page CV. Section order: Hero → Profile (bg-alt, colleague tags) → Photo Banner → Experience (vertical timeline, 5 entries, expandable) → How I Work (bg-alt) → Testimonial → Sprint Health Check → Skills (bg-alt) → Projects → Certifications (bg-alt) → Personal Details → Footer
+- **[cv/cv.css](cv/cv.css)** — All CV-specific styles. Extends `assets/style.css`. Includes `@media print` block for 1.5-page reference sheet.
+- **[cv/cv.js](cv/cv.js)** — Lang/theme toggle, scroll reveal, scroll progress bar, vertical timeline expand/collapse, nav scroll-spy, sprint health check, `window.print()` for PDF.
+- **[cv/experience/](cv/experience/)** — Five employer detail pages (pinkroccade, baxter, koma, alten, asml). Use `../../experience/experience.css` and `cv/experience/lang.js`. Situatie → Rol → Aanpak → Resultaat structure.
+
+**Key CV design decisions:**
+- Hero label: "Scrum Master" only. Green PDF button calls `window.print()` — browser saves as PDF.
+- Vertical timeline: all 5 entries visible at a glance. SM callout always shown; technical details in collapsible `.vtl-expandable`. PinkRoccade starts expanded.
+- Progressive dot sizing: `--sm` 18px → `--current` 24px with accent fill.
+- `noindex` on all CV pages. No cross-links to/from the freelance site.
+- Dutch default, EN toggle via same `data-nl`/`data-en` system.
+- Print stylesheet hides: nav, scroll-progress, colleague-tags, photo-banner, sprint-check, how-i-work, projects, footer. Shows compact experience (SM callouts only), skills, credentials, personal details.
+
 ### Portfolio site (`/portfolio`) — legacy, do not modify or link
 
 Legacy code kept for reference. Not part of the active product. Do not link to it from the freelance site. Content (project descriptions, outcome summaries) may be referenced when writing copy for the active site.
@@ -56,7 +72,7 @@ Legacy code kept for reference. Not part of the active product. Do not link to i
 ## Key Design Details
 
 - No external libraries — everything hand-written. Mobile breakpoint at `max-width: 768px`. Process steps (`how-i-work`) use a 4-column grid → 2-column at 768px.
-- Favicons stored in `portfolio/images/` and referenced from the freelance site.
+- Favicons stored in `assets/` (favicon.svg, favicon.ico, favicon-96x96.png, apple-touch-icon.png, web-app-manifest-192x192.png, web-app-manifest-512x512.png, site.webmanifest). All pages — root, `/experience`, and `/cv` — reference `assets/` using relative paths.
 - **`.bg-alt` sections** use `max-width: 100%; padding: 5rem calc(50vw - 450px + 1.5rem)` to extend edge-to-edge while keeping content at 900px. Reset to `padding: 5rem 1.5rem` at `max-width: 900px`.
 
 ## Site Goal & Visitor Journey
