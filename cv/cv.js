@@ -141,6 +141,18 @@
     var checkResult = document.getElementById("checkResult");
     var checkScoreNumber = document.getElementById("checkScoreNumber");
     var checkFeedback = document.getElementById("checkFeedback");
+    var checkProgressBar = document.getElementById("checkProgressBar");
+    var checkProgressLabel = document.getElementById("checkProgressLabel");
+    var checkResetBtn = document.getElementById("checkResetBtn");
+
+    function updateProgress() {
+        var answered = Object.keys(answers).length;
+        var pct = Math.round((answered / totalQuestions) * 100);
+        checkProgressBar.style.setProperty("--progress", pct + "%");
+        var nlLabel = answered + " van " + totalQuestions + " beantwoord";
+        var enLabel = answered + " of " + totalQuestions + " answered";
+        checkProgressLabel.textContent = currentLang === "nl" ? nlLabel : enLabel;
+    }
 
     var feedbackTexts = {
         low: {
@@ -188,8 +200,20 @@
             btn.classList.add("selected");
             answers[qIndex] = answer;
 
+            updateProgress();
             renderCheckFeedback();
         });
+    });
+
+    checkResetBtn.addEventListener("click", function () {
+        answers = {};
+        document.querySelectorAll(".check-btn").forEach(function (b) {
+            b.classList.remove("selected");
+        });
+        checkScoreNumber.textContent = "0";
+        checkFeedback.textContent = "";
+        checkResult.hidden = true;
+        updateProgress();
     });
 
 })();

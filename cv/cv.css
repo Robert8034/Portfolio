@@ -514,6 +514,62 @@
 /* ============================================
    SPRINT HEALTH CHECK
    ============================================ */
+.check-progress-wrap {
+    max-width: 700px;
+    margin-bottom: 1.25rem;
+}
+
+.check-progress-bar-track {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.4rem;
+}
+
+.check-progress-bar {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: 0.4rem;
+    overflow: hidden;
+}
+
+.check-progress-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: var(--progress, 0%);
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.check-progress-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.check-reset-btn {
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    flex-shrink: 0;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.check-reset-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
 .sprint-check-intro {
     color: var(--text-muted);
     margin-bottom: 2rem;

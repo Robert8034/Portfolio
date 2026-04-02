@@ -299,6 +299,11 @@
            data-nl="Deze interactieve check demonstreert hoe ik naar teamprocessen kijk. Probeer het zelf — beantwoord zes vragen."
            data-en="This interactive check demonstrates how I look at team processes. Try it yourself — answer six questions."></p>
 
+        <div class="check-progress-wrap reveal" style="transition-delay: 0.12s">
+            <div class="check-progress-bar" id="checkProgressBar"></div>
+            <span class="check-progress-label" id="checkProgressLabel" data-nl="0 van 6 beantwoord" data-en="0 of 6 answered"></span>
+        </div>
+
         <div class="check-questions reveal" id="checkQuestions" style="transition-delay: 0.15s">
             <div class="check-question" data-q="0">
                 <span class="check-question-text"
@@ -362,6 +367,7 @@
                 <span class="check-score-total">/6</span>
             </div>
             <p class="check-feedback" id="checkFeedback"></p>
+            <button class="check-reset-btn" id="checkResetBtn" data-nl="Opnieuw" data-en="Reset"></button>
         </div>
     </section>
 
@@ -399,7 +405,7 @@
     </section>
 
     <section class="projects" id="projects">
-        <h2 class="reveal" data-nl="Projecten" data-en="Projects"></h2>
+        <h2 class="reveal" data-nl="Persoonlijke Projecten" data-en="Personal Projects"></h2>
         <div class="project-grid">
 
             <div class="project-card reveal" style="transition-delay: 0.1s">
@@ -418,9 +424,19 @@
                 </div>
             </div>
 
-            <div class="project-card placeholder reveal" style="transition-delay: 0.2s">
-                <h3 data-nl="Binnenkort" data-en="Coming soon"></h3>
-                <p data-nl="Project in ontwikkeling." data-en="Project in development."></p>
+            <div class="project-card reveal" style="transition-delay: 0.2s">
+                <h3>antAI</h3>
+                <p data-nl="Privacy-first spraakassistent voor thuis, volledig lokaal gedraaid op een zelfgebouwde server. Volledige voice pipeline (spraak → AI → spraak) in ~27s op CPU-only hardware — zonder abonnement, zonder cloud."
+                   data-en="Privacy-first home voice assistant running entirely on a self-built server. Full voice pipeline (speech → AI → speech) in ~27s on CPU-only hardware — no subscription, no cloud."></p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Whisper</span>
+                    <span class="project-tag">Mistral 7B</span>
+                    <span class="project-tag">Raspberry Pi</span>
+                    <span class="project-tag">Ubuntu Server</span>
+                    <span class="project-tag">Philips Hue</span>
+                </div>
+                <p class="project-demo" data-nl="Demo beschikbaar op aanvraag." data-en="Demo available on request."></p>
             </div>
 
             <div class="project-card placeholder reveal" style="transition-delay: 0.3s">
