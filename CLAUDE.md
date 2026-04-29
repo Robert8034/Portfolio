@@ -4,120 +4,76 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This repo hosts **two static sites** deployed via GitHub Pages at robertdams.com. There is no build system — changes go live by pushing to `master`. A `.nojekyll` file disables Jekyll processing.
+This repo hosts **robertdams.com** — Robert's personal CV site (Scrum Master positioning) — deployed via GitHub Pages. There is no build system; changes go live by pushing to `master`. A `.nojekyll` file disables Jekyll processing.
 
-- **Root (`/`)** — Freelance landing page (bilingual NL/EN). Primary goal: function as a **call card for potential freelance customers** — conversion-focused. Gets the visitor to book a call.
-- **`/cv`** — Recruiter-facing CV site. Scrum Master positioning. Shared directly with recruiters via LinkedIn — not for random discovery (`noindex`). See `/cv` architecture section below.
-- **`/portfolio`** — Legacy code. Not linked from the active site and not part of the product. Kept in the repo as reference material — useful for understanding Robert's background and past work, and may be mined for content later.
+- **Root (`/`)** — Single-page CV site. Default branch: `master`. Custom domain: `robertdams.com` (see `CNAME`).
+- **`/experience`** — Five employer detail pages (alten, asml, baxter, koma, pinkroccade) linked from the CV's vertical timeline.
+- **`motivatiebrief.html`** — Standalone Dutch cover letter page (kept `noindex`, separate inline styling — does not share `assets/style.css`).
+- **`/portfolio`** — Legacy code from an earlier portfolio site. Not linked from the active CV. Kept as reference material; may be mined for content later.
+
+The **freelance/company site** (formerly at this repo's root) now lives in a separate repo: [`Robert-Dams-Development/robert-dams-development.github.io`](https://github.com/Robert-Dams-Development/robert-dams-development.github.io) → served at `damsdevelopment.nl` (with `damsdevelopment.com` redirecting to `.nl`). Do **not** add cross-links between the two sites.
 
 ## Development
 
-No build tools or package managers. Preview locally by opening `index.html` (or `portfolio/index.html`) in a browser. Deployment is automatic via GitHub Pages on push to `master`.
+No build tools or package managers. Preview locally by opening `index.html` in a browser. Deployment is automatic via GitHub Pages on push to `master`.
 
 ## Architecture
 
-### Freelance site (root)
+### CV site (root)
 
-- **[index.html](index.html)** — Single-page site. Section order: hero → about → services (bg-alt) → results → how-i-work → experience (bg-alt) → background (bg-alt, credentials) → skills → contact (bg-alt) → footer
-- **[assets/style.css](assets/style.css)** — All styling; CSS custom properties for theming (`--bg`, `--text`, `--accent`, etc.); dark navy default (`#0d1520`), light mode (`#f7f8fa`) via `[data-theme="light"]`; blue accent `#4f8ef7`
-- **[assets/script.js](assets/script.js)** — Language toggle (NL/EN), theme toggle (light/dark, persisted to localStorage), scroll-reveal IntersectionObserver, bar chart animation observer, and contact form (Formspree via fetch)
-- **[assets/photo.jpg](assets/photo.jpg)** — Profile photo (real headshot in place)
-
-**Bilingual system:** All visible text uses `data-nl` and `data-en` attributes. Form inputs use `data-nl-placeholder` / `data-en-placeholder`. JavaScript reads the active language and sets `textContent`/`placeholder` accordingly. Default language is Dutch (NL). The experience pages use the same system via a shared `experience/lang.js`.
-
-**Scroll animations:** Elements with `.reveal` start hidden (`opacity: 0`, `translateY`). `.reveal.from-left` shifts from the left instead. An `IntersectionObserver` in `script.js` adds `.visible` once each element enters the viewport (fires once). Hero uses a CSS `@keyframes heroFadeIn` instead (it's above the fold). Stagger is done via inline `style="transition-delay: Xs"`.
-
-**Hover transitions:** Cards (`.service-card`, `.exp-card`, `.cred-card`) and process steps use `transition: property 0.2s` on the base element only — no timing function, nothing on the `:hover` rule. This matches the `.cta-button` pattern and is confirmed to feel snappy. Do not use split transitions, custom easing, or `will-change` — these caused perceived lag.
-
-**Results bar charts:** `.result-bar` elements start at `width: 0` and animate to `var(--target-pct)` via `transition: width 1.3s cubic-bezier(0.4, 0, 0.2, 1)`. A second IntersectionObserver (threshold 0.3) watches `.results` and adds class `.animated` to all `.result-bar` children when the section enters the viewport. Fires once.
-
-**Theme toggle:** Reads `prefers-color-scheme` as default; persists to `localStorage` under key `"theme"`. Sets `data-theme` attribute on `<html>`. Icon updates between `light_mode` and `dark_mode` Material Symbols. Both `assets/script.js` and `experience/lang.js` implement identical logic.
-
-**Bilingual gotcha:** Any text node that changes between NL/EN must have `data-nl` and `data-en` attributes — including dynamic values like dates ("heden"/"present") and unit suffixes ("u/w" / "h/w"). Plain text will not be translated by `applyLanguage()`.
-
-**Contact form:** Uses Formspree (`action="https://formspree.io/f/xojkpdlp"`). Submits via `fetch` with `preventDefault` — no page reload.
-
-### Experience detail pages (`/experience`)
-
-Four standalone detail pages, one per employer. They share a design identical to the main site (same dark theme, no Bootstrap) but are separate HTML files.
-
-- **[experience/pinkroccade.html](experience/pinkroccade.html)** — PinkRoccade / iSuite · 02/2024–present
-- **[experience/baxter.html](experience/baxter.html)** — Baxter / FDS-II · 05/2023–02/2024
-- **[experience/koma.html](experience/koma.html)** — Koma / KControl · 09/2022–05/2023
-- **[experience/asml.html](experience/asml.html)** — ASML / RAT internship · 08/2020–02/2021
-- **[experience/experience.css](experience/experience.css)** — Shared stylesheet for all four pages
-- **[experience/lang.js](experience/lang.js)** — Language toggle only (no form logic); same `data-nl`/`data-en` system
-
-Each page follows a Situatie → Opdracht → Aanpak → Resultaat structure, ends with a tech stack and a CTA linking back to `../index.html#contact`. Back link points to `../index.html#experience`.
-
-### CV site (`/cv`) — recruiter-facing, do not link from freelance site
-
-- **[cv/index.html](cv/index.html)** — Single-page CV. Section order: Hero → Profile (bg-alt, colleague tags) → Photo Banner → Experience (vertical timeline, 5 entries, expandable) → How I Work (bg-alt) → Testimonial → Sprint Health Check → Skills (bg-alt) → Projects → Certifications (bg-alt) → Personal Details → Footer
-- **[cv/cv.css](cv/cv.css)** — All CV-specific styles. Extends `assets/style.css`. Includes `@media print` block for 1.5-page reference sheet.
-- **[cv/cv.js](cv/cv.js)** — Lang/theme toggle, scroll reveal, scroll progress bar, vertical timeline expand/collapse, nav scroll-spy, sprint health check, `window.print()` for PDF.
-- **[cv/experience/](cv/experience/)** — Five employer detail pages (pinkroccade, baxter, koma, alten, asml). Use `../../experience/experience.css` and `cv/experience/lang.js`. Situatie → Rol → Aanpak → Resultaat structure.
+- **[index.html](index.html)** — Single-page CV. Section order: Hero → Profile (bg-alt, colleague tags) → Photo Banner → Experience (vertical timeline, 5 entries, expandable) → How I Work (bg-alt) → Testimonial → Sprint Health Check → Skills (bg-alt) → Projects → Certifications (bg-alt) → Personal Details → Footer
+- **[assets/style.css](assets/style.css)** — Base design system. CSS custom properties for theming (`--bg`, `--text`, `--accent`, etc.); dark navy default (`#0d1520`), light mode (`#f7f8fa`) via `[data-theme="light"]`; blue accent `#4f8ef7`.
+- **[cv.css](cv.css)** — CV-specific overrides and extensions on top of `assets/style.css`. Includes `@media print` block for 1.5-page reference sheet.
+- **[cv.js](cv.js)** — Lang/theme toggle, scroll reveal, scroll progress bar, vertical timeline expand/collapse, nav scroll-spy, sprint health check, `window.print()` for PDF.
+- **[assets/photo.jpg](assets/photo.jpg)** — Profile photo.
 
 **Key CV design decisions:**
 - Hero label: "Scrum Master" only. Green PDF button calls `window.print()` — browser saves as PDF.
 - Vertical timeline: all 5 entries visible at a glance. SM callout always shown; technical details in collapsible `.vtl-expandable`. PinkRoccade starts expanded.
 - Progressive dot sizing: `--sm` 18px → `--current` 24px with accent fill.
-- `noindex` on all CV pages. No cross-links to/from the freelance site.
-- Dutch default, EN toggle via same `data-nl`/`data-en` system.
+- Dutch default, EN toggle via same `data-nl`/`data-en` system used by the freelance site.
 - Print stylesheet hides: nav, scroll-progress, colleague-tags, photo-banner, sprint-check, how-i-work, projects, footer. Shows compact experience (SM callouts only), skills, credentials, personal details.
+- **No `noindex`** on the CV (it is the personal site at robertdams.com; meant to be discoverable). `motivatiebrief.html` keeps `noindex` because it's a targeted cover letter.
+
+### Experience detail pages (`/experience`)
+
+Five standalone detail pages, one per employer. Same dark theme as the CV but separate HTML files.
+
+- **[experience/pinkroccade.html](experience/pinkroccade.html)** — PinkRoccade / iSuite · 02/2024–present
+- **[experience/baxter.html](experience/baxter.html)** — Baxter / FDS-II · 05/2023–02/2024
+- **[experience/koma.html](experience/koma.html)** — Koma / KControl · 09/2022–05/2023
+- **[experience/alten.html](experience/alten.html)** — ALTEN
+- **[experience/asml.html](experience/asml.html)** — ASML / RAT internship · 08/2020–02/2021
+- **[experience/experience.css](experience/experience.css)** — Shared stylesheet
+- **[experience/lang.js](experience/lang.js)** — Language toggle only; same `data-nl`/`data-en` system
+
+Each page follows a Situatie → Rol → Aanpak → Resultaat structure and links back to `../index.html#experience`.
 
 ### Portfolio site (`/portfolio`) — legacy, do not modify or link
 
-Legacy code kept for reference. Not part of the active product. Do not link to it from the freelance site. Content (project descriptions, outcome summaries) may be referenced when writing copy for the active site.
+Legacy code kept for reference. Not part of the active CV. Content may be referenced when writing copy elsewhere.
+
+## Conventions inherited from the freelance site
+
+(These were defined while this repo also held the freelance site; they still apply to CV pages.)
+
+**Bilingual system:** All visible text uses `data-nl` and `data-en` attributes. Form inputs use `data-nl-placeholder` / `data-en-placeholder`. JavaScript reads the active language and sets `textContent`/`placeholder`. Default is Dutch (NL).
+
+**Bilingual gotcha:** Any text node that changes between NL/EN must have `data-nl` and `data-en` attributes — including dynamic values like dates ("heden"/"present") and unit suffixes ("u/w" / "h/w"). Plain text will not be translated by `applyLanguage()`.
+
+**Scroll animations:** Elements with `.reveal` start hidden (`opacity: 0`, `translateY`); `.reveal.from-left` shifts from the left. An `IntersectionObserver` adds `.visible` when each element enters the viewport (fires once). Hero uses CSS `@keyframes` instead. Stagger via inline `style="transition-delay: Xs"`.
+
+**Hover transitions:** Cards use `transition: property 0.2s` on the base element only — no timing function, nothing on the `:hover` rule. Do not use split transitions, custom easing, or `will-change`.
+
+**Theme toggle:** Reads `prefers-color-scheme` as default; persists to `localStorage` under key `"theme"`. Sets `data-theme` attribute on `<html>`. Both `cv.js` and `experience/lang.js` implement identical logic.
 
 ## Key Design Details
 
-- No external libraries — everything hand-written. Mobile breakpoint at `max-width: 768px`. Process steps (`how-i-work`) use a 4-column grid → 2-column at 768px.
-- Favicons stored in `assets/` (favicon.svg, favicon.ico, favicon-96x96.png, apple-touch-icon.png, web-app-manifest-192x192.png, web-app-manifest-512x512.png, site.webmanifest). All pages — root, `/experience`, and `/cv` — reference `assets/` using relative paths.
+- No external libraries — everything hand-written. Mobile breakpoint at `max-width: 768px`.
+- Favicons stored in `assets/` (favicon.svg, favicon.ico, favicon-96x96.png, apple-touch-icon.png, web-app-manifest-192x192.png, web-app-manifest-512x512.png, site.webmanifest). All pages reference `assets/` via relative paths.
 - **`.bg-alt` sections** use `max-width: 100%; padding: 5rem calc(50vw - 450px + 1.5rem)` to extend edge-to-edge while keeping content at 900px. Reset to `padding: 5rem 1.5rem` at `max-width: 900px`.
-
-## Site Goal & Visitor Journey
-
-**Primary goal:** Convert a potential MKB client into a booked discovery call ("Plan een kennismaking"). Conversion = contact form submission (Formspree).
-
-**Target audience:** MKB (SME) business owners in the Brainport/Eindhoven region. Non-technical. They care about time saved, cost reduced, and errors eliminated — not how things are built.
-
-**Intended visitor journey:**
-1. **Hero** — Immediate clarity: who Robert is, that he's available, and a direct CTA to book a call
-2. **About** — Brief personal intro to establish trust and likability
-3. **Services** — What he offers, framed in business outcomes; ends with inline CTA
-4. **Results** — Animated bar charts showing industry-average outcomes (McKinsey/Forrester). Not fabricated client claims — cited stats only.
-5. **How I Work** — Process in plain customer language — no jargon, just: understand → map → build → measure
-6. **Experience** — Proof of competence via 4 employer cards; skeptical prospects click "Lees meer" to read full detail pages; ends with inline CTA
-7. **Background** — Education and certifications (2 cards, concise — MKB clients don't know what PSM I means)
-8. **Skills** — Tech stack for visitors who want to verify competence (moved late in journey — not a conversion driver)
-9. **Contact** — Form to book the call; this is the conversion point
-
-**The three services:**
-| Service | NL | Tools |
-|---|---|---|
-| Process automation | Procesautomatisering | N8N, Power Automate, Make |
-| Data & dashboards | Data & dashboards | Power BI, Azure, PostgreSQL |
-| Connecting systems | Systemen verbinden | REST API, N8N, .NET |
-
-**Role of experience pages:** These are the proof-of-competence layer for prospects who need to vet before committing. Each page uses a Situatie → Opdracht → Aanpak → Resultaat structure and ends with a CTA back to the contact form.
-
-## Content & Branding Decisions
-
-The freelance site targets **MKB (SME) clients in the Brainport region** looking for AI automation, data dashboards, and system integration. Key tone decisions:
-- Lead with **business outcomes** (time saved, cost reduced), not technical processes
-- "How I Work" section uses customer-facing language only — no mention of architecture, Agile, or engineering methods
-- CTA is "Plan een kennismaking / Book a call" (not generic "Contact")
-- Skills section split: "AI & Automatisering" (blue-tinted chips) and "Software Engineering" (standard chips)
-- Service cards show tool sub-tags (N8N / Power Automate / Make etc.) for specificity; Google Material Symbols icons (`autorenew`, `bar_chart`, `device_hub`)
-- Availability badge (green pulsing dot) in hero signals openness to new work
-- No micro-stats bar (explicitly rejected — doesn't fit the conversion-focused tone)
-- No pricing/day-rate signals — MKB clients think in project costs, day rates create sticker shock without context
-- Statistics must cite a named source (McKinsey, Forrester, etc.) — no fabricated client results
-- Inline CTAs at the bottom of services and experience sections (`.section-cta` class) — standalone CTA strips between sections were rejected as feeling out of place
 
 ## Pending / Nice-to-have
 
-- Consider adding stock imagery to service cards as CSS `background-image` with dark overlay — suggested Unsplash photos saved in plan file at `C:\Users\Robert\.claude\plans\dreamy-swimming-eclipse.md`
-- Scroll-spy on nav (highlight active section as user scrolls) — not yet implemented
-- Testimonials section — space reserved for future social proof
-- Future portfolio — a new `/portfolio` (not the legacy one) may be built and linked from the footer once ready
+- Scroll-spy on nav (highlight active section as user scrolls) — partial implementation in `cv.js`.
+- Future portfolio — a new `/portfolio` (not the legacy one) may be built and linked from the footer once ready.
