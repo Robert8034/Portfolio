@@ -338,7 +338,8 @@ section h2::after {
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: #dddac9;
     margin: 0 auto 1.5rem;
     border: 3px solid var(--accent);
 }
